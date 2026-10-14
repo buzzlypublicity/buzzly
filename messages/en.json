@@ -1,0 +1,322 @@
+{
+  "Metadata": {
+    "title": "Buzzly Publicity — Complete Digital Growth",
+    "description": "Digital marketing, video production, branding & design, and web development."
+  },
+  "Language": { "label": "Language" },
+  "Theme": { "toggle": "Toggle theme" },
+  "Nav": {
+  "home": "Home",
+  "services": "Services",
+  "work": "Work",
+  "about": "About",
+  "contact": "Contact",
+  "bookCall": "Book a Call",
+  "getInTouch": "Get in Touch"
+},
+  "Hero": {
+    "badge": "Strategic Digital Transformation",
+    "title": "Grow Your Brand, Faster",
+    "subtitle": "Complete digital growth for modern brands — campaigns, content, and conversions that actually move metrics.",
+    "cta": "Get Started",
+    "secondary": "View Our Work"
+  },
+  "Footer": {
+  "tagline": "We help businesses grow through digital marketing, video production, branding, and modern web development.",
+  "sections": {
+    "company": {
+      "title": "Company",
+      "links": {
+        "about": "About Us",
+        "work": "Our Work",
+        "services": "Our Services",
+        "contact": "Contact Us"
+      }
+    },
+    "services": {
+      "title": "Our Services",
+      "links": {
+        "marketing": "Digital Marketing",
+        "video": "Video Production",
+        "branding": "Branding & Design",
+        "web": "Web Development"
+      }
+    }
+  },
+  "contact": {
+    "title": "Contact Information",
+    "phone": "Phone",
+    "whatsapp": "WhatsApp",
+    "address": "Office Address",
+    "addressValue": "Flat 13, Building 1435, Road 504, Block 205, Muharraq, Kingdom of Bahrain",
+    "crNumber": "Commercial Registration No.",
+    "crNumberValue": "182173-03"
+  },
+  "cta": {
+    "title": "Have a Project in Mind?",
+    "subtitle": "Let's discuss how we can help your business grow.",
+    "button": "Chat on WhatsApp"
+  },
+  "companyLegalName": "BUZZLY PUBLICITY & ADVERTISING W.L.L",
+  "rights": "All rights reserved.",
+  "madeIn": "Made with",
+  "country": "in Bahrain"
+},
+
+"Hero": {
+  "badge": "Strategic Digital Transformation",
+  "titleLine1": "Marketing That Moves",
+  "titleLine2": "Metrics",
+  "subtitle": "We help modern brands scale through data-driven campaigns, high-converting video, sharp branding, and modern web experiences built to sell.",
+  "ctaPrimary": "Start a Project",
+  "ctaSecondary": "Watch Showreel",
+  "stats": {
+    "campaigns": "Campaigns",
+    "rating": "Client Rating",
+    "countries": "Countries"
+  },
+  "trust": {
+    "noContract": "No lock-in contracts",
+    "fastDelivery": "Fast 7-day delivery",
+    "bilingual": "Arabic & English support"
+  }
+},
+"Services": {
+  "badge": "What we do",
+  "title": "Our Services",
+  "subtitle": "From strategy to execution — we handle every layer of your digital presence so your brand grows with intent.",
+  "swipeHint": "Swipe up for next",
+  "items": {
+    "marketing": {
+      "title": "Digital Marketing",
+      "description": "Social media management, targeted ads, and data-driven growth marketing.",
+      "cta": "Learn more"
+    },
+    "video": {
+      "title": "Video Production",
+      "description": "High-converting video ads and creative visual content that captures attention.",
+      "cta": "Learn more"
+    },
+    "branding": {
+      "title": "Branding & Design",
+      "description": "Unique brand identities, professional logos, and premium marketing graphics.",
+      "cta": "Learn more"
+    },
+    "web": {
+      "title": "Web Development",
+      "description": "Modern, lightning-fast, fully responsive websites built to maximize sales.",
+      "cta": "Learn more"
+    }
+  }
+},
+"Problems": {
+  "badge": "The Core Problem",
+  "title": "Why Businesses Struggle to Scale Online",
+  "subtitle": "Every brand hits the same wall — traffic plateaus, ads stop converting, and growth stalls. The issue isn't effort — it's structure.",
+  "miniLabel": "Problems We Solve",
+  "helper": "Tap any card to see how we approach it. Each problem has a clear, executable solution built into our workflow.",
+  "cta": "Discuss your challenges",
+  "labels": {
+    "problem": "The Problem",
+    "solution": "Our Approach"
+  },
+  "items": {
+    "reach": {
+      "tag": "Reach",
+      "title": "Stagnant Reach",
+      "problem": "Outdated strategies fail to drive consistent traffic, and brand visibility slowly declines across every platform.",
+      "solution": "Data-driven growth strategies with continuous A/B testing, audience refinement, and platform-native distribution that keeps reach climbing.",
+      "outcome": "Consistent inbound flow"
+    },
+    "engagement": {
+      "tag": "Attention",
+      "title": "Low Engagement",
+      "problem": "Static posts and generic ads fail to capture attention in a feed that's already saturated with content.",
+      "solution": "High-retention video ads and platform-specific creative built around hooks, pacing, and story — designed for the first three seconds.",
+      "outcome": "Scroll-stopping content"
+    },
+    "branding": {
+      "tag": "Identity",
+      "title": "Weak Branding",
+      "problem": "Inconsistent visuals and scattered messaging make the business blend into the crowd — nothing feels ownable.",
+      "solution": "A unified brand system — logo, typography, palette, and messaging — applied consistently across every touchpoint.",
+      "outcome": "Recognizable identity"
+    },
+    "funnels": {
+      "tag": "Conversion",
+      "title": "Leaky Funnels",
+      "problem": "Slow, unoptimized websites turn warm leads away before they ever reach checkout or contact.",
+      "solution": "Fast, mobile-first pages with clear paths, sharp CTAs, and analytics wired in so every drop-off point is visible and fixable.",
+      "outcome": "Higher conversion rate"
+    }
+  }
+},
+"Portfolio": {
+  "badge": "Our Work",
+  "title": "Selected Projects & Craft",
+  "subtitle": "A closer look at how we approach every discipline — from strategy to ship. Each category reflects a process we run end-to-end.",
+  "viewProject": "Explore this service",
+  "viewAll": "View all work",
+  "nav": {
+    "prev": "Previous",
+    "next": "Next"
+  },
+  "items": {
+    "marketing": {
+      "tag": "Campaign",
+      "type": "Growth",
+      "title": "Digital Marketing",
+      "description": "Full-funnel campaigns built on audience research, creative testing, and continuous optimization — designed to compound reach and revenue over time."
+    },
+    "video": {
+      "tag": "Production",
+      "type": "Motion",
+      "title": "Video Production",
+      "description": "Short-form ads, brand films, and social-first content engineered for retention — from scripting and storyboards to edit and color."
+    },
+    "branding": {
+      "tag": "Identity",
+      "type": "Design",
+      "title": "Branding & Design",
+      "description": "Identity systems, design languages, and marketing collateral that stay consistent across every channel — from print to pixel."
+    },
+    "web": {
+      "tag": "Build",
+      "type": "Web",
+      "title": "Web Development",
+      "description": "Fast, responsive, and conversion-focused websites — from landing pages to full e-commerce — built to scale with your business."
+    }
+  }
+},
+"WhyChoose": {
+  "badge": "Why Choose Buzzly",
+  "title": "Built for brands that take growth seriously",
+  "subtitle": "We're not the loudest agency in the room — we're the one that ships, measures, and improves. Here's what working with us actually looks like.",
+  "miniLabel": "What Sets Us Apart",
+  "focusLabel": "Currently focused on",
+  "items": {
+    "bilingual": {
+      "tag": "Native",
+      "title": "Bilingual Native Support",
+      "description": "Arabic and English teams working natively — no translation layer, no mixed messaging across markets."
+    },
+    "fullservice": {
+      "tag": "In-house",
+      "title": "Full-Service Under One Roof",
+      "description": "Marketing, video, branding, and web — handled by a single team sharing one strategy and one voice."
+    },
+    "bahrain": {
+      "tag": "Region",
+      "title": "Kingdom of Bahrain Based",
+      "description": "Rooted in Bahrain with a global client base — local presence, regional understanding, international standards."
+    },
+    "transparent": {
+      "tag": "Process",
+      "title": "Transparent Process",
+      "description": "Audit → Strategy → Execution → Optimization. Every stage is documented, reviewed, and shared in plain language."
+    },
+    "data": {
+      "tag": "Approach",
+      "title": "Data-Driven Decisions",
+      "description": "Every campaign, creative, and page is measured against the metrics that matter — not opinions or assumptions."
+    },
+    "wll": {
+      "tag": "Trust",
+      "title": "Registered W.L.L Business",
+      "description": "Legally compliant, NDA-ready, and protected by clear terms — so partnerships are built on solid ground from day one."
+    }
+  }
+},
+"Process": {
+  "badge": "How We Work",
+  "title": "Our Process",
+  "subtitle": "Four stages, one goal — from the first audit to compounding results. No guesswork, no guesswork, no black boxes.",
+  "focusList": "Focus Areas",
+  "stepLabel": "Step",
+  "items": {
+    "audit": {
+      "tag": "Stage One",
+      "title": "Audit & Discovery",
+      "description": "We analyze your brand's current digital presence, website speed, and top market competitors — mapping exactly where you stand and where the biggest opportunities are hiding.",
+      "points": [
+        "Comprehensive digital presence audit",
+        "Competitor benchmarking and positioning",
+        "Website performance and speed analysis"
+      ]
+    },
+    "strategy": {
+      "tag": "Stage Two",
+      "title": "Strategy Framework",
+      "description": "We build a custom 30-day content roadmap, ad funnel wireframes, and high-converting video scripts — engineered around your audience, not templates.",
+      "points": [
+        "30-day content and campaign roadmap",
+        "Ad funnel architecture and wireframes",
+        "Video scripting and creative direction"
+      ]
+    },
+    "execute": {
+      "tag": "Stage Three",
+      "title": "Full Execution",
+      "description": "Our creative team launches targeted campaigns, designs every asset, and builds your responsive web infrastructure — all in-house, all on schedule.",
+      "points": [
+        "Multi-channel campaign launch",
+        "Design assets and content production",
+        "Responsive web infrastructure build"
+      ]
+    },
+    "optimize": {
+      "tag": "Stage Four",
+      "title": "Optimization",
+      "description": "We actively track performance data, improve conversion metrics, and deliver clear monthly reports — so every cycle beats the one before it.",
+      "points": [
+        "Continuous performance tracking",
+        "Conversion rate improvement",
+        "Clear monthly reporting and reviews"
+      ]
+    }
+  }
+},
+"FAQs": {
+  "badge": "FAQs",
+  "title": "Answers to the questions we hear most",
+  "subtitle": "Straightforward answers about how we work, who we work with, and what to expect from a partnership with Buzzly.",
+  "miniLabel": "Common Questions",
+  "visual": {
+    "title": "Still curious?",
+    "description": "If your question isn't here, drop us a message — we usually respond the same day.",
+    "cta": "Talk to us"
+  },
+  "items": {
+    "services": {
+      "tag": "Services",
+      "question": "What services do you offer?",
+      "answer": "We handle the full digital stack — Digital Marketing, Video Production, Branding & Design, and Web Development. Everything is delivered in-house by a single team, so your strategy, voice, and execution stay consistent across every channel."
+    },
+    "global": {
+      "tag": "Reach",
+      "question": "Do you work with clients outside Bahrain?",
+      "answer": "Yes. We're based in the Kingdom of Bahrain with a global client base. We deliver across regions and time zones without losing local nuance — whether your audience is regional or international."
+    },
+    "bilingual": {
+      "tag": "Language",
+      "question": "Do you deliver content in both Arabic and English?",
+      "answer": "Absolutely. Arabic and English are both handled natively by our team — no translation layer, no mixed messaging. Every asset is written, designed, and reviewed in the language it's meant for."
+    },
+    "pricing": {
+      "tag": "Payment",
+      "question": "How does pricing and payment work?",
+      "answer": "Custom projects (web, app, branding) require a 50% non-refundable advance deposit, with the remaining 50% due prior to final launch or code transfer. Monthly marketing and managed ad retainers are billed 100% upfront and due 5 days before the start of each cycle."
+    },
+    "revisions": {
+      "tag": "Process",
+      "question": "How many revisions are included?",
+      "answer": "Custom development and graphic design projects include up to 3 standard revision rounds within the agreed initial scope. Any major structural changes or feature additions outside the original proposal are billed at standard hourly rates."
+    },
+    "start": {
+      "tag": "Kickoff",
+      "question": "How do we get started on a project?",
+      "answer": "It starts with a discovery call to understand your goals, audience, and timeline. From there, we send a tailored proposal with scope, deliverables, and timeline. Once approved and the deposit is settled, we kick off within the week."
+    }
+  }
+}
+}

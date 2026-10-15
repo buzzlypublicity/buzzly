@@ -405,5 +405,198 @@
       "description": "Paid campaigns across Meta, Google, TikTok, and more — engineered for measurable ROI, not just impressions."
     }
   }
+},
+"SectorsServed": {
+  "badge": "Sectors We Serve",
+  "title": "Built for the industries we know best",
+  "subtitle": "Different sectors need different playbooks. Here's where our work speaks the loudest — and where we go deepest.",
+  "featured": "Featured",
+  "featuredLabel": "Primary Focus",
+  "explore": "Explore this sector",
+  "footnote": "Fresh case studies from our first campaigns arriving soon"
+},
+"HowWeWork": {
+  "badge": "Our Process",
+  "title": "From first call to compounding results",
+  "subtitle": "A clear, four-step process that keeps every project focused, measurable, and on schedule.",
+  "footerNote": "Every engagement follows the same rhythm — no black boxes, no guesswork.",
+  "cta": "Book a discovery call",
+  "steps": {
+    "discover": {
+      "title": "Discover",
+      "description": "We learn your brand, your audience, and your goals before we touch a single design or ad.",
+      "bullets": {
+        "0": "Kickoff workshop & brand immersion",
+        "1": "Market, competitor & audience research",
+        "2": "Goal-setting, KPIs & success metrics"
+      }
+    },
+    "strategize": {
+      "title": "Strategize",
+      "description": "We build a custom strategy that maps every channel, message, and deadline before a single asset goes live.",
+      "bullets": {
+        "0": "30-day campaign roadmap",
+        "1": "Content pillars & creative direction",
+        "2": "Channel selection & budget allocation"
+      }
+    },
+    "execute": {
+      "title": "Execute",
+      "description": "We produce, publish, and launch — with a dedicated team on your account from day one.",
+      "bullets": {
+        "0": "Creative production (photo, video, copy)",
+        "1": "Multi-channel campaign launch",
+        "2": "Daily management & community engagement"
+      }
+    },
+    "measure": {
+      "title": "Measure",
+      "description": "We track everything, report clearly, and refine relentlessly so every cycle beats the one before it.",
+      "bullets": {
+        "0": "Weekly performance reviews",
+        "1": "Monthly deep-dive reports",
+        "2": "Continuous optimization & iteration"
+      }
+    }
+  }
+},
+"WhyBuzzly": {
+  "badge": "Why BUZZLY",
+  "headline": {
+    "line1": "We make noise",
+    "line2": "worth",
+    "line3": "listening to."
+  },
+  "subtitle": "Six things we don't compromise on — the principles behind every project we take.",
+  "miniLabel": "Our Commitments",
+  "cta": "Start a conversation",
+  "reasons": {
+    "creative": {
+      "title": "Creative Thinking",
+      "description": "We build playbooks, not copy them. Every project gets a strategy made for it — never a template pulled off a shelf."
+    },
+    "customized": {
+      "title": "Customized Strategy",
+      "description": "No two brands are the same. No two strategies should be either. Your goals, your audience, your roadmap — built from scratch."
+    },
+    "transparent": {
+      "title": "Transparent Communication",
+      "description": "No black boxes. Clear reports, honest updates, and direct access to the team working on your brand."
+    },
+    "brandFocused": {
+      "title": "Brand-Focused Execution",
+      "description": "One team, one voice, every channel. Strategy and execution stay aligned from day one to delivery."
+    },
+    "bilingual": {
+      "title": "Bilingual Native",
+      "description": "Arabic and English handled natively by our team — no translation layer, no mixed messaging across markets."
+    },
+    "registered": {
+      "title": "Registered W.L.L",
+      "description": "Legally compliant, NDA-ready, and protected by clear terms — partnerships built on solid ground from the start."
+    }
+  }
+},
+"ServicesFinalCTA": {
+  "badge": "Let's Talk",
+  "headline": {
+    "line1": "Ready to make",
+    "line2": "some noise?"
+  },
+  "subtitle": "Whether you need PR, social, brand, or web — we build every service in-house. Tell us where you are and where you want to be.",
+  "ctaPrimary": "Start on WhatsApp",
+  "ctaSecondary": "Send an inquiry",
+  "visual": {
+    "label": "Publicity & Advertising",
+    "subtitle": "Made in Bahrain",
+    "status": "Taking projects",
+    "location": "Muharraq · BH"
+  },
+  "trust": {
+    "label": "Response Time",
+    "value": "Within 24 hours"
+  },
+  "contact": {
+    "whatsapp": {
+      "label": "WhatsApp"
+    },
+    "phone": {
+      "label": "Phone"
+    },
+    "address": {
+      "label": "Office",
+      "value": "Muharraq, Kingdom of Bahrain"
+    }
+  },
+  "bottomNote": "No lock-in contracts · Free discovery call · Bilingual support"
+},
+"WorkHero": {
+  "badge": "Our Work",
+  "headline": {
+    "line1": "Ideas That Make",
+    "line2": "Brands",
+    "line3": "Stand Out."
+  },
+  "subtitle": "Explore our creative concepts, campaign ideas, and visual explorations. Each concept reflects our approach to building distinctive brand identities.",
+  "ctaPrimary": "Explore Concepts",
+  "ctaSecondary": "Let's Talk",
+  "disclaimer": {
+    "label": "About these concepts",
+    "subLabel": "Transparency first",
+    "description": "Selected work on this page is self-initiated creative concepts developed to demonstrate our approach and capabilities. They are not presented as commissioned client work.",
+    "bullets": {
+      "0": "100% self-initiated concepts",
+      "1": "Craft-first, not client-claimed",
+      "2": "Real thinking, honest labels"
+    }
+  }
+},
+
+"WorkConcepts": {
+  "badge": "Self-Initiated",
+  "title": "Concept Projects",
+  "subtitle": "Three creative explorations — each built from scratch to demonstrate how we think, design, and deliver.",
+  "conceptTag": "Concept",
+  "view": "View",
+  "footnote": "Every project above is a self-initiated concept — clearly labeled, never presented as client work."
+},
+
+"WorkApproach": {
+  "badge": "Creative Approach",
+  "title": "How we approach a concept",
+  "subtitle": "Every concept — ours or a client's — follows the same four-step rhythm.",
+  "steps": {
+    "research": {
+      "title": "Research",
+      "description": "We study the market, audience, and competitors before touching a single pixel. Context shapes everything."
+    },
+    "direction": {
+      "title": "Direction",
+      "description": "We choose a creative territory — mood, palette, references — and commit to it. No hedging, no mixed messages."
+    },
+    "execution": {
+      "title": "Execution",
+      "description": "We design every asset: logo, typography, visuals, copy. Each element earns its place in the system."
+    },
+    "reflection": {
+      "title": "Reflection",
+      "description": "We explain what the concept is trying to achieve — the goal, not fabricated results. That's the honest story."
+    }
+  }
+},
+
+"WorkConceptDetail": {
+  "breadcrumb": "Concepts",
+  "conceptTag": "Self-Initiated Concept",
+  "conceptOnly": "Concept only",
+  "imagePending": "Visuals coming soon",
+  "objectiveNote": "This concept was created as a self-initiated exploration — not a commissioned client project. It demonstrates our approach, not a delivered result.",
+  "labels": {
+    "brand": "Fictional Brand",
+    "category": "Category",
+    "type": "Project Type"
+  },
+  "viewNext": "View next",
+  "backToConcepts": "Back to all concepts"
 }
 }

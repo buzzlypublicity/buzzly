@@ -29,7 +29,7 @@ export function Navbar() {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
 
-  /* ---- scroll → navbar blur ---- */
+  /* ---- scroll → navbar elevated ---- */
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
     onScroll();
@@ -46,45 +46,48 @@ export function Navbar() {
           TOP NAVBAR
          ============================================================ */}
       <header
-        className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ease-out ${
-          scrolled
-            ? 'bg-background/70 backdrop-blur-2xl shadow-[0_8px_32px_-12px_rgba(0,0,0,0.08)]'
-            : 'bg-transparent'
+        className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ease-out ${
+          scrolled ? 'bg-background/70 backdrop-blur-2xl' : 'bg-transparent'
         }`}
+        style={{
+          boxShadow: scrolled
+            ? '0 1px 0 var(--skeu-bevel-top) inset, 0 -1px 0 var(--skeu-bevel-bottom) inset, 0 4px 12px -4px var(--skeu-drop-1)'
+            : 'none',
+        }}
       >
-        <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-4 md:h-[76px] md:px-8">
+        <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-4 md:h-[72px] md:px-8">
 
-          {/* ---------- LOGO ---------- */}
+          {/* ---------- LOGO (border-free, clean) ---------- */}
           <Link
             href="/"
-            aria-label="Buzzly Home"
-            className="group flex shrink-0 items-center gap-3"
+            aria-label="Buzzly Publicity — Home"
+            className="group flex shrink-0 items-center gap-2.5"
           >
-            <span className="relative flex h-10 w-10 items-center justify-center overflow-hidden rounded-2xl bg-brand-gradient shadow-lg shadow-brand-500/25 ring-1 ring-white/10 transition-all duration-500 group-hover:scale-105 group-hover:shadow-xl group-hover:shadow-brand-500/40">
-              {/* 👇 apni logo file public/buzzly 2.jpeg me daalo */}
+            <span className="relative flex h-9 w-9 items-center justify-center overflow-hidden rounded-xl transition-transform duration-300 ease-out group-hover:scale-[1.06] md:h-10 md:w-10">
               <Image
                 src="/buzzly 2.jpeg"
-                alt="Buzzly"
+                alt="Buzzly Publicity"
                 width={40}
                 height={40}
                 priority
-                className="h-full w-full object-contain p-1.5"
+                className="h-full w-full object-contain"
               />
             </span>
-            <span className="hidden font-display text-lg font-black tracking-tight sm:block">
-              BUZZLY PUBLICITY<span className="text-brand-500">.</span>
+            <span className="hidden font-display text-[15px] font-black tracking-tight sm:block md:text-base">
+              BUZZLY PUBLICITY
+              <span className="text-brand-500">.</span>
             </span>
           </Link>
 
           {/* ---------- DESKTOP LINKS ---------- */}
-          <nav className="hidden items-center gap-1 md:flex">
+          <nav className="hidden items-center gap-0.5 md:flex">
             {NAV_ITEMS.map((item) => {
               const active = isActive(item.href);
               return (
                 <Link
                   key={item.key}
                   href={item.href}
-                  className={`group relative rounded-full px-4 py-2 text-sm font-medium transition-colors duration-300 ${
+                  className={`group relative rounded-full px-3.5 py-2 text-[13px] font-medium transition-colors duration-200 ease-out ${
                     active
                       ? 'text-brand-500'
                       : 'text-foreground/70 hover:text-foreground'
@@ -93,14 +96,14 @@ export function Navbar() {
                   <span className="relative z-10">{t(item.key)}</span>
 
                   {/* Soft pill bg on hover */}
-                  <span className="pointer-events-none absolute inset-0 rounded-full bg-brand-500/0 transition-colors duration-300 group-hover:bg-brand-500/[0.08]" />
+                  <span className="pointer-events-none absolute inset-0 rounded-full bg-brand-500/0 transition-colors duration-200 group-hover:bg-brand-500/[0.07]" />
 
                   {/* Animated underline */}
                   <span
-                    className={`pointer-events-none absolute bottom-1 left-1/2 h-[2px] -translate-x-1/2 rounded-full bg-brand-500 transition-all duration-500 ease-out ${
+                    className={`pointer-events-none absolute bottom-1 left-1/2 h-[2px] -translate-x-1/2 rounded-full bg-brand-500 transition-all duration-300 ease-out ${
                       active
-                        ? 'w-6 opacity-100'
-                        : 'w-0 opacity-0 group-hover:w-4 group-hover:opacity-60'
+                        ? 'w-5 opacity-100'
+                        : 'w-0 opacity-0 group-hover:w-3.5 group-hover:opacity-60'
                     }`}
                   />
                 </Link>
@@ -113,19 +116,29 @@ export function Navbar() {
             <LanguageSwitcher />
             <ThemeToggle />
 
-            {/* Book Call CTA */}
+            {/* ---------- BOOK CALL CTA (skeuomorphic) ---------- */}
             <Link
               href="/contact"
-              className="group relative ms-1 hidden items-center gap-2 overflow-hidden rounded-full bg-brand-500 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-brand-500/25 transition-all duration-300 hover:shadow-xl hover:shadow-brand-500/50 active:scale-95 md:inline-flex"
+              className="skeu-btn group relative ms-1 hidden items-center gap-2 overflow-hidden rounded-full px-4.5 py-2 text-[13px] font-bold transition-all duration-150 md:inline-flex"
+              style={{
+                paddingInline: '1.125rem',
+                paddingBlock: '0.5rem',
+              }}
             >
               {/* Shine sweep */}
-              <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
+              <span
+                aria-hidden
+                className="pointer-events-none absolute inset-y-0 -left-1/2 w-1/2 -translate-x-full bg-gradient-to-r from-transparent via-white/40 to-transparent transition-transform duration-[600ms] ease-out group-hover:translate-x-[300%]"
+              />
 
-              <PhoneCall className="relative h-4 w-4" strokeWidth={2.5} />
+              <PhoneCall
+                className="relative h-3.5 w-3.5"
+                strokeWidth={2.5}
+              />
               <span className="relative">{t('bookCall')}</span>
               <ArrowUpRight
-                className="relative h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                strokeWidth={2.5}
+                className="relative h-3 w-3 transition-transform duration-200 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                strokeWidth={2.75}
               />
             </Link>
           </div>
@@ -133,10 +146,17 @@ export function Navbar() {
       </header>
 
       {/* ============================================================
-          MOBILE BOTTOM TAB BAR
+          MOBILE BOTTOM TAB BAR (Skeuomorphic surface)
          ============================================================ */}
       <nav className="fixed inset-x-0 bottom-0 z-50 md:hidden">
-        <div className="relative bg-background/85 backdrop-blur-2xl shadow-[0_-8px_32px_-12px_rgba(0,0,0,0.12)]">
+        <div
+          className="relative bg-background/85 backdrop-blur-2xl"
+          style={{
+            borderTop: '1px solid var(--skeu-bevel-top)',
+            boxShadow:
+              '0 -1px 0 var(--skeu-bevel-top) inset, 0 1px 0 var(--skeu-bevel-bottom) inset, 0 -6px 20px -8px var(--skeu-drop-1)',
+          }}
+        >
           <div className="grid grid-cols-5">
             {NAV_ITEMS.map((item) => {
               const active = isActive(item.href);
@@ -146,35 +166,46 @@ export function Navbar() {
                   key={item.key}
                   href={item.href}
                   aria-label={t(item.key)}
-                  className={`group relative flex flex-col items-center justify-center gap-1 py-3 transition-colors duration-300 ${
+                  className={`group relative flex flex-col items-center justify-center gap-1 py-2.5 transition-colors duration-200 ease-out ${
                     active
                       ? 'text-brand-500'
                       : 'text-foreground/60 active:text-foreground'
                   }`}
                 >
-                  {/* Top glow dot */}
+                  {/* Top glow line (active) */}
                   <span
-                    className={`pointer-events-none absolute -top-px left-1/2 h-1 -translate-x-1/2 rounded-full bg-brand-500 shadow-[0_0_16px_var(--color-brand-500)] transition-all duration-500 ease-out ${
-                      active ? 'w-10 opacity-100' : 'w-0 opacity-0'
+                    aria-hidden
+                    className={`pointer-events-none absolute -top-px left-1/2 h-[2px] -translate-x-1/2 rounded-full bg-brand-500 transition-all duration-300 ease-out ${
+                      active ? 'w-9 opacity-100' : 'w-0 opacity-0'
                     }`}
+                    style={{
+                      boxShadow: active
+                        ? '0 0 14px var(--color-brand-500)'
+                        : 'none',
+                    }}
                   />
 
-                  {/* Soft glow behind active icon */}
+                  {/* Soft glow bg (active) */}
                   <span
-                    className={`pointer-events-none absolute inset-x-3 inset-y-1 rounded-2xl bg-brand-500/10 transition-opacity duration-500 ${
+                    aria-hidden
+                    className={`pointer-events-none absolute inset-x-3 inset-y-1 rounded-2xl transition-opacity duration-300 ease-out ${
                       active ? 'opacity-100' : 'opacity-0'
                     }`}
+                    style={{
+                      background:
+                        'radial-gradient(circle at 50% 40%, rgba(233,122,0,0.14), transparent 70%)',
+                    }}
                   />
 
                   <Icon
-                    className={`relative h-5 w-5 transition-all duration-300 ${
-                      active ? 'scale-110' : 'group-active:scale-90'
+                    className={`relative h-[18px] w-[18px] transition-transform duration-200 ease-out ${
+                      active ? 'scale-[1.08]' : 'group-active:scale-90'
                     }`}
                     strokeWidth={active ? 2.5 : 1.8}
                   />
 
                   <span
-                    className={`relative text-[10px] font-semibold leading-none transition-all duration-300 ${
+                    className={`relative text-[10px] font-semibold leading-none transition-opacity duration-200 ${
                       active ? 'opacity-100' : 'opacity-70'
                     }`}
                   >
@@ -185,6 +216,7 @@ export function Navbar() {
             })}
           </div>
 
+          {/* iOS safe area */}
           <div className="h-[env(safe-area-inset-bottom)]" />
         </div>
       </nav>

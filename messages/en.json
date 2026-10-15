@@ -66,19 +66,25 @@
 "Hero": {
   "badge": "Strategic Digital Transformation",
   "titleLine1": "Marketing That Moves",
-  "titleLine2": "Metrics",
+  "rotate": {
+    "0": "Metrics",
+    "1": "Results",
+    "2": "Revenue"
+  },
   "subtitle": "We help modern brands scale through data-driven campaigns, high-converting video, sharp branding, and modern web experiences built to sell.",
   "ctaPrimary": "Start a Project",
   "ctaSecondary": "Watch Showreel",
   "stats": {
-    "campaigns": "Campaigns",
+    "primaryLabel": "Total Impact",
+    "primaryValue": "250+",
+    "primaryDesc": "Campaigns delivered across every channel",
     "rating": "Client Rating",
     "countries": "Countries"
   },
   "trust": {
     "noContract": "No lock-in contracts",
     "fastDelivery": "Fast 7-day delivery",
-    "bilingual": "Arabic & English support"
+    "bilingual": "Arabic & English"
   }
 },
 "Services": {
@@ -317,6 +323,53 @@
       "question": "How do we get started on a project?",
       "answer": "It starts with a discovery call to understand your goals, audience, and timeline. From there, we send a tailored proposal with scope, deliverables, and timeline. Once approved and the deposit is settled, we kick off within the week."
     }
+  }
+},
+"FinalCTA": {
+  "badge": "Let's Talk",
+  "titleLine1": "Let's Build",
+  "titleLine2": "Together.",
+  "subtitle": "Ready to scale your digital footprint? Tell us where you are and where you want to be — we'll map the path between.",
+  "ctaPrimary": "Chat on WhatsApp",
+  "ctaSecondary": "Send an inquiry",
+  "dividerLabel": "Reach Us Directly",
+  "trustLine": "BUZZLY PUBLICITY & ADVERTISING W.L.L · CR No. 182173-03 · Kingdom of Bahrain",
+  "cards": {
+    "phone": {
+      "label": "Phone"
+    },
+    "whatsapp": {
+      "label": "WhatsApp"
+    },
+    "address": {
+      "label": "Office",
+      "value": "Flat 13, Building 1435, Road 504, Block 205, Muharraq, Bahrain"
+    },
+    "cr": {
+      "label": "CR Number"
+    }
+  }
+},
+"ServicesHero": {
+  "badge": "Our Services",
+  "noiseWord": "NOISE",
+  "marquee": "SERVICES · BUZZLY PUBLICITY",
+  "headline": {
+    "line1": "Make Your",
+    "line2": "Brand",
+    "line3": "Impossible",
+    "line4": "To Ignore."
+  },
+  "subtitle": "We build publicity systems that put your brand in front of the right people — consistently, creatively, and with intent.",
+  "ctaPrimary": "Explore Our Services",
+  "ctaSecondary": "Let's Talk",
+  "info": {
+    "servicesValue": "06",
+    "servicesLabel": "Core Services",
+    "locationValue": "BH",
+    "locationLabel": "Based in Bahrain",
+    "langValue": "EN · AR",
+    "langLabel": "Bilingual"
   }
 }
 }

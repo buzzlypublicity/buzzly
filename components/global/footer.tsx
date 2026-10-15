@@ -50,52 +50,70 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="relative mt-24 overflow-hidden bg-background">
+    <footer className="relative mt-20 overflow-hidden bg-background md:mt-24">
       {/* Top brand glow line */}
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-brand-500/60 to-transparent" />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-brand-500/60 to-transparent"
+      />
 
       {/* Ambient orange glow */}
-      <div className="pointer-events-none absolute -top-40 left-1/2 h-80 w-[700px] -translate-x-1/2 rounded-full bg-brand-500/10 blur-[120px]" />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -top-40 left-1/2 h-80 w-[700px] -translate-x-1/2 rounded-full bg-brand-500/10 blur-[120px]"
+      />
 
       <div className="relative mx-auto max-w-7xl px-4 md:px-8">
 
         {/* ============================================================
-            TIER 1 — BRAND SHOWCASE + CTA
+            TIER 1 — BRAND + CTA
            ============================================================ */}
-        <div className="grid gap-10 py-16 md:grid-cols-12 md:gap-12 md:py-20">
+        <div className="grid gap-10 py-14 md:grid-cols-12 md:gap-12 md:py-16">
+
           {/* ---------- Brand ---------- */}
           <div className="md:col-span-7">
-            <Link href="/" className="group inline-flex items-center gap-3">
-              <span className="relative flex h-12 w-12 items-center justify-center overflow-hidden rounded-2xl bg-brand-gradient shadow-lg shadow-brand-500/25 ring-1 ring-white/10 transition-transform duration-500 group-hover:scale-105 group-hover:rotate-3">
+            <Link
+              href="/"
+              aria-label="Buzzly Publicity — Home"
+              className="group inline-flex items-center gap-3"
+            >
+              <span className="relative flex h-11 w-11 items-center justify-center overflow-hidden rounded-xl transition-transform duration-300 ease-out group-hover:scale-[1.06]">
                 <Image
                   src="/buzzly 2.jpeg"
-                  alt="Buzzly"
-                  width={48}
-                  height={48}
-                  className="h-full w-full object-contain p-1.5"
+                  alt="Buzzly Publicity"
+                  width={44}
+                  height={44}
+                  className="h-full w-full object-contain"
                 />
               </span>
-              <span className="font-display text-2xl font-black tracking-tight">
-                BUZZLY<span className="text-brand-500">.</span>
+              <span className="font-display text-xl font-black tracking-tight text-foreground">
+                BUZZLY PUBLICITY<span className="text-brand-500">.</span>
               </span>
             </Link>
 
-            <p className="mt-6 max-w-lg text-base leading-relaxed text-muted md:text-lg">
+            <p className="mt-5 max-w-lg text-[15px] leading-relaxed text-muted md:mt-6 md:text-base">
               {t('tagline')}
             </p>
           </div>
 
-          {/* ---------- CTA Card ---------- */}
+          {/* ---------- CTA Card (skeuomorphic) ---------- */}
           <div className="md:col-span-5">
-            <div className="relative overflow-hidden rounded-3xl bg-card p-6 shadow-sm ring-1 ring-border/50 transition-all duration-500 hover:shadow-xl hover:shadow-brand-500/10 md:p-7">
-              {/* Inner glow */}
-              <div className="pointer-events-none absolute -right-12 -top-12 h-40 w-40 rounded-full bg-brand-500/20 blur-3xl" />
-              <div className="pointer-events-none absolute -bottom-16 -left-16 h-40 w-40 rounded-full bg-accent-500/10 blur-3xl" />
+            <div className="skeu-panel skeu-panel-hover relative overflow-hidden rounded-3xl p-6 md:p-7">
 
-              <h3 className="relative font-display text-lg font-bold md:text-xl">
+              {/* Inner glows */}
+              <div
+                aria-hidden
+                className="pointer-events-none absolute -right-12 -top-12 h-40 w-40 rounded-full bg-brand-500/20 blur-3xl"
+              />
+              <div
+                aria-hidden
+                className="pointer-events-none absolute -bottom-16 -left-16 h-40 w-40 rounded-full bg-accent-500/10 blur-3xl"
+              />
+
+              <h3 className="relative font-display text-lg font-bold text-foreground md:text-xl">
                 {t('cta.title')}
               </h3>
-              <p className="relative mt-2 text-sm leading-relaxed text-muted">
+              <p className="relative mt-2 text-[13px] leading-relaxed text-muted md:text-sm">
                 {t('cta.subtitle')}
               </p>
 
@@ -103,14 +121,22 @@ export function Footer() {
                 href={WHATSAPP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative mt-6 inline-flex items-center gap-2 overflow-hidden rounded-full bg-brand-500 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-brand-500/25 transition-all duration-300 hover:bg-brand-600 hover:shadow-xl hover:shadow-brand-500/50 active:scale-95"
+                className="skeu-btn group relative mt-5 inline-flex items-center gap-2 overflow-hidden rounded-full px-5 py-2.5 text-[13px] font-bold md:text-sm"
               >
-                <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
-                <MessageCircle className="relative h-4 w-4" strokeWidth={2.5} />
+                {/* Shine sweep */}
+                <span
+                  aria-hidden
+                  className="pointer-events-none absolute inset-y-0 -left-1/2 w-1/2 -translate-x-full bg-gradient-to-r from-transparent via-white/40 to-transparent transition-transform duration-[600ms] ease-out group-hover:translate-x-[300%]"
+                />
+
+                <MessageCircle
+                  className="relative h-4 w-4"
+                  strokeWidth={2.5}
+                />
                 <span className="relative">{t('cta.button')}</span>
                 <ArrowUpRight
-                  className="relative h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 flip-rtl"
-                  strokeWidth={2.5}
+                  className="relative h-3.5 w-3.5 transition-transform duration-200 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5 flip-rtl"
+                  strokeWidth={2.75}
                 />
               </a>
             </div>
@@ -118,27 +144,36 @@ export function Footer() {
         </div>
 
         {/* ============================================================
-            TIER 2 — LINKS + CONTACT GRID
+            TIER 2 — LINKS + CONTACT
            ============================================================ */}
         <div className="grid gap-0 border-t border-border/50 py-12 md:grid-cols-12 md:gap-10">
+
           {/* Column 1 — Company */}
           <div className="md:col-span-3">
             <CollapsibleSection title={t('sections.company.title')}>
-              <LinkList namespace="sections.company.links" links={SECTIONS[0].links} t={t} />
+              <LinkList
+                namespace="sections.company.links"
+                links={SECTIONS[0].links}
+                t={t}
+              />
             </CollapsibleSection>
           </div>
 
           {/* Column 2 — Services */}
           <div className="md:col-span-3">
             <CollapsibleSection title={t('sections.services.title')}>
-              <LinkList namespace="sections.services.links" links={SECTIONS[1].links} t={t} />
+              <LinkList
+                namespace="sections.services.links"
+                links={SECTIONS[1].links}
+                t={t}
+              />
             </CollapsibleSection>
           </div>
 
-          {/* Column 3 — Contact (spans wider) */}
+          {/* Column 3 — Contact */}
           <div className="md:col-span-6">
             <CollapsibleSection title={t('contact.title')}>
-              <ul className="space-y-5">
+              <ul className="space-y-4">
                 <ContactItem
                   icon={Phone}
                   label={t('contact.phone')}
@@ -171,14 +206,21 @@ export function Footer() {
         {/* ============================================================
             TIER 3 — BOTTOM BAR
            ============================================================ */}
-        <div className="flex flex-col items-center justify-between gap-4 border-t border-border/50 py-7 md:flex-row">
-          <p className="text-center text-xs text-muted md:text-start">
-            © {year} <span className="font-medium text-foreground/80">{t('companyLegalName')}</span>. {t('rights')}
+        <div className="flex flex-col items-center justify-between gap-3 border-t border-border/50 py-6 md:flex-row md:py-7">
+          <p className="text-center text-[11px] text-muted md:text-start md:text-xs">
+            © {year}{' '}
+            <span className="font-semibold text-foreground/85">
+              {t('companyLegalName')}
+            </span>
+            . {t('rights')}
           </p>
 
-          <div className="flex items-center gap-1.5 text-xs text-muted">
+          <div className="flex items-center gap-1.5 text-[11px] text-muted md:text-xs">
             <span>{t('madeIn')}</span>
-            <Heart className="h-3 w-3 fill-brand-500 text-brand-500 animate-pulse" />
+            <Heart
+              className="h-3 w-3 fill-brand-500 text-brand-500 animate-pulse"
+              strokeWidth={0}
+            />
             <span>{t('country')}</span>
           </div>
         </div>
@@ -191,7 +233,7 @@ export function Footer() {
 }
 
 /* ============================================================
-   Link List (helper for columns)
+   Link List
    ============================================================ */
 function LinkList({
   namespace,
@@ -203,19 +245,19 @@ function LinkList({
   t: ReturnType<typeof useTranslations>;
 }) {
   return (
-    <ul className="space-y-3.5">
+    <ul className="space-y-3">
       {links.map((link) => (
         <li key={link.key}>
           <Link
             href={link.href}
-            className="group inline-flex items-center gap-1.5 text-sm text-muted transition-all duration-300 hover:text-brand-500"
+            className="group inline-flex items-center gap-1.5 text-[13px] text-muted transition-colors duration-200 ease-out hover:text-brand-500 md:text-sm"
           >
             <span className="relative">
               {t(`${namespace}.${link.key}` as any)}
-              <span className="absolute -bottom-0.5 left-0 h-px w-0 bg-brand-500 transition-all duration-300 group-hover:w-full" />
+              <span className="absolute -bottom-0.5 left-0 h-px w-0 bg-brand-500 transition-all duration-300 ease-out group-hover:w-full" />
             </span>
             <ArrowUpRight
-              className="h-3 w-3 -translate-x-1 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100 flip-rtl"
+              className="h-3 w-3 -translate-x-1 opacity-0 transition-all duration-200 ease-out group-hover:translate-x-0 group-hover:opacity-100 flip-rtl"
               strokeWidth={2.5}
             />
           </Link>
@@ -226,7 +268,7 @@ function LinkList({
 }
 
 /* ============================================================
-   Collapsible Section (mobile accordion · desktop plain)
+   Collapsible Section
    ============================================================ */
 function CollapsibleSection({
   title,
@@ -243,20 +285,21 @@ function CollapsibleSection({
         type="button"
         onClick={() => setOpen((v) => !v)}
         aria-expanded={open}
-        className="flex w-full items-center justify-between py-4 text-start md:cursor-default md:py-0 md:pb-5"
+        className="flex w-full items-center justify-between py-3.5 text-start md:cursor-default md:py-0 md:pb-4"
       >
-        <h3 className="font-display text-xs font-bold uppercase tracking-[0.15em] text-foreground/90">
+        <h3 className="font-display text-[11px] font-bold uppercase tracking-[0.15em] text-foreground/90 md:text-xs">
           {title}
         </h3>
         <ChevronDown
-          className={`h-4 w-4 text-muted transition-transform duration-300 md:hidden ${
+          className={`h-4 w-4 text-muted transition-transform duration-300 ease-out md:hidden ${
             open ? 'rotate-180' : ''
           }`}
+          strokeWidth={2.5}
         />
       </button>
 
       <div
-        className={`grid overflow-hidden transition-all duration-500 ease-out md:grid-rows-[1fr] ${
+        className={`grid overflow-hidden transition-all duration-400 ease-out md:grid-rows-[1fr] ${
           open
             ? 'grid-rows-[1fr] pb-5 opacity-100'
             : 'grid-rows-[0fr] opacity-0 md:pb-0 md:opacity-100'
@@ -269,7 +312,7 @@ function CollapsibleSection({
 }
 
 /* ============================================================
-   Contact Item (with expandable address)
+   Contact Item
    ============================================================ */
 function ContactItem({
   icon: Icon,
@@ -288,22 +331,23 @@ function ContactItem({
 
   const inner = (
     <>
-      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-brand-500/10 text-brand-500 transition-colors duration-300 group-hover:bg-brand-500 group-hover:text-white">
-        <Icon className="h-4 w-4" strokeWidth={2.25} />
+      <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-brand-500/10 text-brand-500 transition-colors duration-200 ease-out group-hover:bg-brand-500 group-hover:text-white md:h-9 md:w-9 md:rounded-xl">
+        <Icon className="h-3.5 w-3.5 md:h-4 md:w-4" strokeWidth={2.25} />
       </span>
+
       <span className="min-w-0 flex-1">
-        <span className="block text-[10px] font-semibold uppercase tracking-[0.15em] text-muted">
+        <span className="block text-[9px] font-bold uppercase tracking-[0.15em] text-muted md:text-[10px]">
           {label}
         </span>
         <span
-          className={`mt-0.5 block text-sm font-medium leading-relaxed text-foreground transition-colors duration-200 group-hover:text-brand-500 ${
+          className={`mt-0.5 block text-[13px] font-medium leading-relaxed text-foreground transition-colors duration-200 group-hover:text-brand-500 md:text-sm ${
             expandable && !expanded ? 'line-clamp-1' : ''
           }`}
         >
           {value}
         </span>
 
-        {/* Show more/less button */}
+        {/* Show more/less */}
         {expandable && (
           <button
             type="button"
@@ -312,16 +356,16 @@ function ContactItem({
               e.stopPropagation();
               setExpanded((v) => !v);
             }}
-            className="mt-1.5 inline-flex items-center gap-1 text-[11px] font-semibold text-brand-500 transition-colors hover:text-brand-600"
+            className="mt-1.5 inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider text-brand-500 transition-colors duration-200 hover:text-brand-600 md:text-[11px]"
           >
             {expanded ? (
               <>
-                <Minus className="h-3 w-3" strokeWidth={2.5} />
+                <Minus className="h-3 w-3" strokeWidth={2.75} />
                 <span>Show less</span>
               </>
             ) : (
               <>
-                <Plus className="h-3 w-3" strokeWidth={2.5} />
+                <Plus className="h-3 w-3" strokeWidth={2.75} />
                 <span>Show more</span>
               </>
             )}

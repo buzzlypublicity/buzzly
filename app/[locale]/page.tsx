@@ -1,4 +1,5 @@
 import { FAQs } from '@/components/home/faqs';
+import { FinalCTA } from '@/components/home/final-cta';
 import { Hero } from '@/components/home/hero';
 import { Portfolio } from '@/components/home/portfolio';
 import { Problems } from '@/components/home/problems';
@@ -19,6 +20,7 @@ export default function HomePage() {
     <WhyChoose/>
     <Process/>
     <FAQs/>
+    <FinalCTA/>
     </>
   );
 }

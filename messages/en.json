@@ -371,5 +371,39 @@
     "langValue": "EN · AR",
     "langLabel": "Bilingual"
   }
+},
+"ServicesList": {
+  "badge": "Our Services",
+  "title": "Six ways we make brands louder",
+  "subtitle": "Every service below is delivered in-house by the same team — strategy, creative, and execution working from one playbook.",
+  "explore": "Explore",
+  "footerNote": "Need a scope that doesn't fit any of these? Every engagement is custom-built.",
+  "footerCta": "Discuss a custom project",
+  "items": {
+    "publicRelations": {
+      "title": "Public Relations & Publicity",
+      "description": "Earned media, press coverage, reputation management, and crisis communication — building authority that no ad spend can buy."
+    },
+    "socialMedia": {
+      "title": "Social Media Marketing",
+      "description": "Platform-native content, community management, and a consistent brand voice that compounds reach week after week."
+    },
+    "brandStrategy": {
+      "title": "Brand Strategy & Identity",
+      "description": "Positioning, visual identity systems, and messaging frameworks — the foundation everything else is built on."
+    },
+    "contentCreation": {
+      "title": "Content Creation",
+      "description": "Visual storytelling, photography, motion, and copy that captures attention and turns it into action."
+    },
+    "influencerMarketing": {
+      "title": "Influencer Marketing",
+      "description": "Creator partnerships built on audience fit and authentic reach — not vanity metrics or paid shoutouts."
+    },
+    "digitalAdvertising": {
+      "title": "Digital Advertising",
+      "description": "Paid campaigns across Meta, Google, TikTok, and more — engineered for measurable ROI, not just impressions."
+    }
+  }
 }
 }

@@ -598,5 +598,211 @@
   },
   "viewNext": "View next",
   "backToConcepts": "Back to all concepts"
+},
+"AboutHero": {
+  "eyebrow": "Bilingual Creative Agency",
+  "headline": { "part1": "We are ", "highlight": "BUZZLY" },
+  "subtitle": "A bilingual creative publicity agency based in the Kingdom of Bahrain — helping modern brands tell sharper stories.",
+  "cta": "Learn more about us",
+  "founder": {
+    "alt": "Founder of BUZZLY Publicity",
+    "name": "[Founder Name]",
+    "role": "Founder & Creative Director",
+    "badge": "Founder"
+  },
+  "sectorsLabel": "Serving brands in",
+  "sectors": {
+    "0": "F&B",
+    "1": "Fashion",
+    "2": "Beauty",
+    "3": "Tech",
+    "4": "Real Estate",
+    "5": "Retail"
+  },
+  "services": {
+    "pr":         { "name": "Public Relations", "description": "Earned media, press, reputation." },
+    "social":     { "name": "Social Media",     "description": "Content, community, consistency." },
+    "brand":      { "name": "Brand Strategy",   "description": "Positioning, identity, voice." },
+    "content":    { "name": "Content Creation", "description": "Photo, video, copywriting." },
+    "influencer": { "name": "Influencer",       "description": "Creator partnerships." },
+    "ads":        { "name": "Paid Ads",         "description": "Meta, Google, TikTok." },
+    "video":      { "name": "Video Production", "description": "Reels, ads, brand films." },
+    "web":        { "name": "Web Development",  "description": "Fast, responsive websites." }
+  }
+},
+"WhoWeAre": {
+  "badge": "Who We Are",
+  "paragraphs": {
+    "p1": "BUZZLY Publicity is a bilingual creative agency based in the Kingdom of Bahrain.",
+    "p2": "We help brands grow through thoughtful communication, sharp strategy, and creative execution.",
+    "p3": "We work with brands across F&B, fashion, beauty, tech, and more — building campaigns in both Arabic and English."
+  },
+  "progressLabel": "Reading"
+},
+"OurStory": {
+  "badge": "Our Story",
+  "title": {
+    "line1": "Built on a simple",
+    "line2": "belief."
+  },
+  "story": {
+    "p1": "BUZZLY Publicity began with a simple belief: brands don't need more noise — they need clearer stories. In a market saturated with content, the brands that stand out are the ones that know exactly who they're speaking to, and why.",
+    "p2": "We noticed that many businesses had great products and real ambition, but struggled to communicate them in a way that actually reached people. So we built a bilingual agency that combines strategy, creativity, and honest communication under one roof.",
+    "p3": "Today, we work with brands across Bahrain and beyond — helping them sharpen their identity, build meaningful campaigns, and grow with intention rather than volume."
+  },
+  "quote": {
+    "text": "\"Brands don't need more noise — they need clearer stories.\"",
+    "author": "— BUZZLY Publicity"
+  },
+  "timelineLabel": "The Journey",
+  "timeline": {
+    "founded": {
+      "date": "2026",
+      "title": "BUZZLY is founded",
+      "description": "Established in Muharraq, Kingdom of Bahrain — with a clear focus on bilingual creative publicity."
+    },
+    "concepts": {
+      "date": "2026",
+      "title": "First concept projects",
+      "description": "Self-initiated concept work published to showcase our thinking, design, and creative direction."
+    },
+    "today": {
+      "date": "Today",
+      "title": "Taking on our first clients",
+      "description": "Open for partnerships with brands ready to grow through thoughtful communication and sharp creative."
+    }
+  },
+  "timelineFooter": "The story is just beginning."
+},
+"WhatWeDo": {
+  "badge": "What We Do",
+  "title": {
+    "line1": "Six services,",
+    "highlight": "one team."
+  },
+  "subtitle": "Every service is delivered in-house by the same team — strategy, creative, and execution working from one playbook.",
+  "footerNote": "Full details, deliverables, and process are on the Services page.",
+  "cta": "Explore all services",
+  "services": {
+    "pr": {
+      "name": "Public Relations & Publicity",
+      "description": "Earned media, press coverage, and reputation building."
+    },
+    "social": {
+      "name": "Social Media Marketing",
+      "description": "Platform-native content and community management."
+    },
+    "brand": {
+      "name": "Branding & Creative Strategy",
+      "description": "Positioning, identity, and messaging frameworks."
+    },
+    "content": {
+      "name": "Content Creation",
+      "description": "Photo, video, motion, and copywriting."
+    },
+    "influencer": {
+      "name": "Influencer Marketing",
+      "description": "Creator partnerships built on audience fit."
+    },
+    "ads": {
+      "name": "Digital Advertising",
+      "description": "Paid campaigns across Meta, Google, TikTok."
+    }
+  }
+},
+"OurApproach": {
+  "badge": "Our Approach",
+  "title": {
+    "line1": "How we handle",
+    "highlight": "every project."
+  },
+  "subtitle": "Five clear steps. No black boxes. Same rhythm for every brand we work with.",
+  "footerNote": "Every project follows the same rhythm — from first call to final report.",
+  "cta": "Start your project",
+  "steps": {
+    "understand": {
+      "label": "Step 01",
+      "title": "Understand",
+      "description": "We start by learning your brand, your audience, and your goals — before touching a single pixel."
+    },
+    "strategize": {
+      "label": "Step 02",
+      "title": "Strategize",
+      "description": "We build the plan: creative direction, channel mix, timeline, and clear success metrics."
+    },
+    "create": {
+      "label": "Step 03",
+      "title": "Create",
+      "description": "We design every asset — visuals, copy, video, and messaging — all aligned to the strategy."
+    },
+    "execute": {
+      "label": "Step 04",
+      "title": "Execute",
+      "description": "We launch the campaign across the agreed channels and manage every detail as it goes live."
+    },
+    "evaluate": {
+      "label": "Step 05",
+      "title": "Evaluate",
+      "description": "We review the data, report clearly, and refine the next cycle to improve performance."
+    }
+  }
+},
+"OurValues": {
+  "badge": "Our Values",
+  "title": {
+    "line1": "Six principles we",
+    "highlight": "don't compromise on."
+  },
+  "subtitle": "These aren't slogans on a wall — they're the operating principles behind every project we take.",
+  "values": {
+    "creativity": {
+      "label": "Value 01",
+      "title": "Creativity with Purpose",
+      "description": "Every idea earns its place. Nothing is added just because it looks nice — every creative choice serves the brand and the goal."
+    },
+    "honest": {
+      "label": "Value 02",
+      "title": "Honest Communication",
+      "description": "No black boxes. Clear updates, realistic timelines, and direct access to the team working on your account."
+    },
+    "strategic": {
+      "label": "Value 03",
+      "title": "Strategic Thinking",
+      "description": "Every move has a reason. Strategy comes first, execution comes second — always in that order."
+    },
+    "detail": {
+      "label": "Value 04",
+      "title": "Attention to Detail",
+      "description": "Small things matter. Typography, spacing, tone, timing — everything is deliberate and considered."
+    },
+    "collaboration": {
+      "label": "Value 05",
+      "title": "Client Collaboration",
+      "description": "Built with you, not for you. Every decision is a conversation, and your input shapes the outcome."
+    },
+    "improvement": {
+      "label": "Value 06",
+      "title": "Continuous Improvement",
+      "description": "Always learning, always refining. Every campaign cycle is designed to beat the one before it."
+    }
+  }
+},
+"AboutFinalCTA": {
+  "badge": "Let's Talk",
+  "headline": {
+    "line1": "Let's Build",
+    "line2": "Something Worth",
+    "line3": "Talking About."
+  },
+  "subtitle": "Tell us about your brand, campaign, or next creative project — we usually reply within 24 hours.",
+  "ctaPrimary": "Let's Talk on WhatsApp",
+  "ctaSecondary": "Send an inquiry",
+  "dividerLabel": "Reach Us Directly",
+  "contact": {
+    "phoneLabel": "Phone",
+    "addressLabel": "Office",
+    "addressValue": "Muharraq, Bahrain"
+  },
+  "bottomNote": "Bilingual support · Bahrain-based · Registered W.L.L"
 }
 }

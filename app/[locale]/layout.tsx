@@ -5,9 +5,9 @@ import { getTranslations } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import { getServerTheme } from '@/lib/theme';
-import { Navbar } from '@/components/global/navbar';
+import { ChatProvider } from '@/context/chat-context';
+import { ConditionalChrome } from '@/components/global/conditional-chrome';
 import '../globals.css';
-import { Footer } from '@/components/global/footer';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'swap' });
 const cairo = Cairo({ subsets: ['arabic', 'latin'], variable: '--font-cairo', display: 'swap' });
@@ -57,11 +57,9 @@ export default async function LocaleLayout({
         className={`${inter.variable} ${cairo.variable} ${grotesk.variable} font-sans antialiased`}
       >
         <NextIntlClientProvider>
-          <Navbar />
-          <main className="pt-16 md:pt-[72px] pb-[76px] md:pb-0">
-            {children}
-          </main>
-          <Footer/>
+          <ChatProvider>
+            <ConditionalChrome>{children}</ConditionalChrome>
+          </ChatProvider>
         </NextIntlClientProvider>
       </body>
     </html>

@@ -1,7 +1,22 @@
-export default function ContactPage() {
+import { setRequestLocale } from 'next-intl/server';
+import { ContactHero } from '@/components/contact/contact-hero';
+import { ContactForm } from '@/components/contact/contact-form';
+import { ContactFAQ } from '@/components/contact/contact-faq';
+
+export default async function ContactPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+
   return (
-    <section className="mx-auto max-w-7xl px-6 py-24">
-      <h1 className="text-5xl font-black">Contact</h1>
-    </section>
+    <>
+      <ContactHero />
+      <ContactForm/>
+      <ContactFAQ/>
+      {/* Baaki sections baad mein */}
+    </>
   );
 }

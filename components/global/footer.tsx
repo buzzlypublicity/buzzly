@@ -206,7 +206,9 @@ export function Footer() {
         {/* ============================================================
             TIER 3 — BOTTOM BAR
            ============================================================ */}
-        <div className="flex flex-col items-center justify-between gap-3 border-t border-border/50 py-6 md:flex-row md:py-7">
+        <div className="flex flex-col items-center justify-between gap-4 border-t border-border/50 py-6 md:flex-row md:py-7">
+          
+          {/* Left — Copyright */}
           <p className="text-center text-[11px] text-muted md:text-start md:text-xs">
             © {year}{' '}
             <span className="font-semibold text-foreground/85">
@@ -215,6 +217,24 @@ export function Footer() {
             . {t('rights')}
           </p>
 
+          {/* Center — Legal Links */}
+          <div className="flex items-center gap-4 text-[11px] font-semibold text-muted md:text-xs">
+            <Link 
+              href="/privacy" 
+              className="transition-colors duration-200 hover:text-brand-500"
+            >
+              {t('privacy')}
+            </Link>
+            <span className="h-3 w-px bg-border/60" />
+            <Link 
+              href="/terms" 
+              className="transition-colors duration-200 hover:text-brand-500"
+            >
+              {t('terms')}
+            </Link>
+          </div>
+
+          {/* Right — Made In */}
           <div className="flex items-center gap-1.5 text-[11px] text-muted md:text-xs">
             <span>{t('madeIn')}</span>
             <Heart

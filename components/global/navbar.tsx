@@ -14,13 +14,15 @@ import {
   Mail,
   PhoneCall,
   ArrowUpRight,
+  CoinsIcon
 } from 'lucide-react';
 
 const NAV_ITEMS = [
   { key: 'home',     href: '/',         icon: Home },
+  { key: 'about',    href: '/about',    icon: Users },
   { key: 'services', href: '/services', icon: Sparkles },
   { key: 'work',     href: '/work',     icon: Briefcase },
-  { key: 'about',    href: '/about',    icon: Users },
+  { key: 'pricing',     href: '/pricing',     icon: CoinsIcon },
   { key: 'contact',  href: '/contact',  icon: Mail },
 ] as const;
 

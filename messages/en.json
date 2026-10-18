@@ -11,6 +11,7 @@
   "work": "Work",
   "about": "About",
   "contact": "Contact",
+   "pricing": "Pricing", 
   "bookCall": "Book a Call",
   "getInTouch": "Get in Touch"
 },
@@ -1099,5 +1100,122 @@
   "placeholder": "Ask me anything...",
   "footerNote": "BUZZLY AI can make mistakes. Please verify important info.",
   "clearChat": "Clear chat"
+},
+"PricingHero": {
+  "badge": "Pricing",
+  "noiseWord": "PRICING",
+  "marquee": "CLEAR PRICING · NO SURPRISES · TRANSPARENT",
+  "headline": {
+    "line1": "Creative Solutions.",
+    "line2": "Clear Pricing.",
+    "line3": "No Surprises."
+  },
+  "subtitle": "Explore our service packages, understand what's included, and choose the right starting point for your brand.",
+  "ctaPrimary": "Explore Packages",
+  "ctaSecondary": "Get a Custom Quote"
+},
+"PricingTabs": {
+  "label": "Choose a Service"
+},
+"PricingCards": {
+  "badge": "Packages",
+  "mostPopular": "Most Popular",
+  "getStarted": "Get Started",
+  "inquire": "Inquire Now"
+},
+"PricingPromise": {
+  "badge": "Our Promise",
+  "headline": {
+    "line1": "We don't just give you a price.",
+    "line2": "We give you a commitment."
+  },
+  "subtitle": "Transparency is built into our process. Here is exactly what you can expect when you partner with BUZZLY.",
+  "cta": "Get a Custom Quote",
+  "items": {
+    "clearScope": {
+      "title": "Clear Scope",
+      "desc": "Every deliverable is listed in the proposal, so you know exactly what you're paying for from day one."
+    },
+    "budgetClarity": {
+      "title": "Budget Clarity",
+      "desc": "Separate pricing for extras and third-party costs. No hidden fees, no surprises at the end."
+    },
+    "qualityProcess": {
+      "title": "Quality Process",
+      "desc": "Defined review, revisions, and quality checks at every stage to ensure the final output is premium."
+    },
+    "accountability": {
+      "title": "Accountability",
+      "desc": "Clear communication, direct access to the team, and agreed timelines. We stick to our word."
+    },
+    "flexibility": {
+      "title": "Flexibility",
+      "desc": "Packages tailored for different business requirements, with room to scale as your brand grows."
+    }
+  }
+},
+"PricingAddons": {
+  "badge": "Build Your Own",
+  "title": "Optional Add-ons",
+  "subtitle": "Need something extra? Select the add-ons you want, and we'll include them in your custom quote.",
+  "estimatedTotal": "Estimated Total",
+  "cta": "Request Custom Quote",
+  "total": "Total",
+  "ctaShort": "Request"
+},
+"PricingComparison": {
+  "badge": "The Difference",
+  "title": "Why Brands Choose BUZZLY",
+  "subtitle": "We believe in transparent pricing and clear commitments. See how we compare to a typical agency setup in Bahrain.",
+  "typical": {
+    "title": "Typical Agency",
+    "p1": "BHD 600+ / month retainer",
+    "p2": "Pricing hidden until a sales call",
+    "p3": "6 to 12-month lock-in contracts",
+    "p4": "Content & design often outsourced",
+    "p5": "Translation layer for Arabic (not native)"
+  },
+  "buzzly": {
+    "badge": "The BUZZLY Way",
+    "title": "BUZZLY Publicity",
+    "p1": "From BHD 40 / month",
+    "p2": "100% Public & transparent pricing",
+    "p3": "No lock-in contracts. Month-to-month.",
+    "p4": "Full in-house team (strategy, design, video)",
+    "p5": "Native Arabic & English team",
+    "p6": "Up to 3 standard revision rounds",
+    "cta": "View Our Packages"
+  },
+  "disclaimer": "* Comparison based on publicly available pricing from agencies in the Kingdom of Bahrain. Scope varies by project."
+},
+"PricingFinalCTA": {
+  "badge": "Ready to Start?",
+  "headline": {
+    "line1": "Not Sure Which Package",
+    "line2": "Fits Your Brand?"
+  },
+  "subtitle": "Tell us your goals and budget. We'll recommend a suitable starting point and provide a clear, no-obligation proposal.",
+  "ctaPrimary": "Chat on WhatsApp",
+  "ctaSecondary": "Send an Inquiry",
+  "trust": {
+    "noHidden": "No Hidden Fees",
+    "noLockIn": "No Lock-in Contracts",
+    "response": "Reply within 24 Hours"
+  }
+},
+"ClientWork": {
+  "badge": "Track Record",
+  "title": "Trusted by Brands Across the Kingdom",
+  "subtitle": "We don't just design concepts. We deliver real strategies and campaigns for leading businesses in Bahrain.",
+  "viewCase": "View Project",
+  "cta": "Explore All Case Studies"
+},
+"CaseStudyDetail": {
+  "back": "Back to Work",
+  "challenge": "The Challenge",
+  "strategy": "Our Strategy",
+  "execution": "The Execution",
+  "results": "The Results",
+  "resultsSub": "Measurable outcomes from our strategic approach."
 }
 }

@@ -4,7 +4,6 @@ import { Inter, Cairo, Space_Grotesk } from "next/font/google";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
-import Script from "next/script"; // 👈 Ye add kiya Google Analytics ke liye
 import { routing } from "@/i18n/routing";
 import { getServerTheme } from "@/lib/theme";
 import { ChatProvider } from "@/context/chat-context";
@@ -16,16 +15,10 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "sw
 const cairo = Cairo({ subsets: ["arabic", "latin"], variable: "--font-cairo", display: "swap" });
 const grotesk = Space_Grotesk({ subsets: ["latin"], variable: "--font-grotesk", display: "swap" });
 
-/* ============================================================
-   STATIC PARAMS
-   ============================================================ */
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
 
-/* ============================================================
-   ADVANCED METADATA (SEO, OpenGraph, Twitter)
-   ============================================================ */
 export async function generateMetadata({
   params,
 }: {
@@ -43,10 +36,7 @@ export async function generateMetadata({
     description: t("description"),
     alternates: {
       canonical: `/${locale}`,
-      languages: {
-        en: "/en",
-        ar: "/ar",
-      },
+      languages: { en: "/en", ar: "/ar" },
     },
     openGraph: {
       title: t("title"),
@@ -73,9 +63,6 @@ export async function generateMetadata({
   };
 }
 
-/* ============================================================
-   VIEWPORT & THEME COLOR
-   ============================================================ */
 export const viewport: Viewport = {
   themeColor: "#E97A00",
   width: "device-width",
@@ -83,9 +70,6 @@ export const viewport: Viewport = {
   maximumScale: 5,
 };
 
-/* ============================================================
-   LOCAL BUSINESS SCHEMA (JSON-LD)
-   ============================================================ */
 const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
@@ -121,9 +105,6 @@ const localBusinessSchema = {
   ],
 };
 
-/* ============================================================
-   LAYOUT COMPONENT
-   ============================================================ */
 export default async function LocaleLayout({
   children,
   params,
@@ -147,22 +128,49 @@ export default async function LocaleLayout({
       data-scroll-behavior="smooth"
     >
       <head>
-        {/* PWA & Mobile Meta Tags */}
-        <link rel="manifest" href="/manifest.json" />
+        {/* ⚠️ PWA manifest link NAHI lagayenge — Next.js auto-inject karega */}
+
+        {/* Apple PWA Meta */}
         <link rel="apple-touch-icon" href="/icons/icon-192x192.png" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="apple-mobile-web-app-title" content="BUZZLY" />
         <meta name="format-detection" content="telephone=no" />
         <meta name="mobile-web-app-capable" content="yes" />
-        
-        {/* DNS Prefetch & Preconnect for Ultra-Fast Loading */}
+
+        {/* DNS Prefetch & Preconnect */}
         <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
         <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
 
-        {/* JSON-LD Schema for Local SEO */}
+        {/* 🔥 GLOBAL PWA EVENT CAPTURE — Ye sabse zaroori hai! */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                window.deferredPrompt = null;
+                
+                // Capture beforeinstallprompt GLOBALLY (before React hydrates)
+                window.addEventListener('beforeinstallprompt', function(e) {
+                  e.preventDefault();
+                  window.deferredPrompt = e;
+                  window.dispatchEvent(new CustomEvent('pwa-installable'));
+                  console.log('✅ PWA: beforeinstallprompt captured');
+                });
+
+                // Detect when app is installed
+                window.addEventListener('appinstalled', function() {
+                  window.deferredPrompt = null;
+                  console.log('✅ PWA: App installed successfully');
+                });
+              })();
+            `,
+          }}
+        />
+
+        {/* JSON-LD Schema */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -180,24 +188,8 @@ export default async function LocaleLayout({
           </ChatProvider>
         </NextIntlClientProvider>
 
-        {/* ============================================================
-            GOOGLE ANALYTICS 4 (GA4) - Optimized with next/script
-           ============================================================ */}
-        <Script
-          strategy="afterInteractive"
-          src="https://www.googletagmanager.com/gtag/js?id=G-T313T2TKP1"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-T313T2TKP1', {
-              page_path: window.location.pathname,
-            });
-          `}
-        </Script>
-         <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID!} />
+        {/* ✅ Single GA4 setup — only via GoogleAnalytics component */}
+        <GoogleAnalytics gaId="G-T313T2TKP1" />
       </body>
     </html>
   );

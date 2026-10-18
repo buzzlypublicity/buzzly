@@ -3,59 +3,74 @@
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslations } from 'next-intl';
-import { Download, X, WifiOff, Zap, Smartphone, Check } from 'lucide-react';
+import { Download, X, WifiOff, Zap, Smartphone } from 'lucide-react';
 
 export function PWAInstallPrompt() {
   const t = useTranslations('PWAInstall');
   const [showPrompt, setShowPrompt] = useState(false);
-  const [deferredPrompt, setDeferredPrompt] = useState<any>(null);
   const [isIOS, setIsIOS] = useState(false);
+  const [isInstalled, setIsInstalled] = useState(false);
 
   useEffect(() => {
-    // 1. Check if already installed
-    if (window.matchMedia('(display-mode: standalone)').matches) return;
+    // 1. Already installed? Don't show
+    if (window.matchMedia('(display-mode: standalone)').matches) {
+      setIsInstalled(true);
+      return;
+    }
 
-    // 2. Check if user dismissed recently (7 days)
+    // 2. Dismissed in last 7 days?
     const dismissed = localStorage.getItem('pwa-install-dismissed');
     if (dismissed) {
       const hoursSince = (Date.now() - parseInt(dismissed)) / (1000 * 60 * 60);
-      if (hoursSince < 168) return; // 7 days
+      if (hoursSince < 168) return;
     }
 
-    // 3. Detect iOS
+    // 3. iOS detection
     const ios = /iPad|iPhone|iPod/.test(navigator.userAgent);
     setIsIOS(ios);
 
-    // 4. Listen for install prompt (Android/Desktop)
-    const handler = (e: Event) => {
-      e.preventDefault();
-      setDeferredPrompt(e);
-      setTimeout(() => setShowPrompt(true), 3000); // 3 seconds
-    };
-
-    window.addEventListener('beforeinstallprompt', handler);
-
-    // iOS pe native prompt nahi hota, to 3 second baad manually show karo
+    // 4. iOS pe native prompt nahi hota — manual show karo
     if (ios) {
       const timer = setTimeout(() => setShowPrompt(true), 3000);
-      return () => {
-        clearTimeout(timer);
-        window.removeEventListener('beforeinstallprompt', handler);
-      };
+      return () => clearTimeout(timer);
     }
 
-    return () => window.removeEventListener('beforeinstallprompt', handler);
+    // 5. Android/Desktop — global deferredPrompt check karo
+    // Agar event already fire ho chuka hai to foran use karo
+    if ((window as any).deferredPrompt) {
+      const timer = setTimeout(() => setShowPrompt(true), 3000);
+      return () => clearTimeout(timer);
+    }
+
+    // 6. Listen for custom event (jab global script fire kare)
+    const handler = () => {
+      setTimeout(() => setShowPrompt(true), 3000);
+    };
+
+    window.addEventListener('pwa-installable', handler);
+
+    return () => {
+      window.removeEventListener('pwa-installable', handler);
+    };
   }, []);
 
+  // Don't render if already installed
+  if (isInstalled) return null;
+
   const handleInstall = async () => {
-    if (deferredPrompt) {
-      deferredPrompt.prompt();
-      const { outcome } = await deferredPrompt.userChoice;
-      setDeferredPrompt(null);
-      if (outcome === 'accepted') setShowPrompt(false);
+    const prompt = (window as any).deferredPrompt;
+
+    if (prompt) {
+      prompt.prompt();
+      const { outcome } = await prompt.userChoice;
+      (window as any).deferredPrompt = null;
+      if (outcome === 'accepted') {
+        setShowPrompt(false);
+      }
+    } else if (isIOS) {
+      alert('To install: Tap the Share icon → "Add to Home Screen"');
     } else {
-      // iOS instructions
-      alert(isIOS ? 'Tap the Share icon → "Add to Home Screen"' : 'Install from your browser menu');
+      alert('Look for "Install App" in your browser menu (⋮)');
     }
   };
 
@@ -97,7 +112,7 @@ export function PWAInstallPrompt() {
                 className="pointer-events-none absolute -right-16 -top-16 h-40 w-40 rounded-full bg-brand-500/25 blur-3xl"
               />
 
-              {/* Close button */}
+              {/* Close */}
               <button
                 onClick={handleDismiss}
                 className="absolute end-3 top-3 flex h-8 w-8 items-center justify-center rounded-full bg-foreground/5 text-muted transition-colors hover:bg-foreground/10 hover:text-foreground"
@@ -108,11 +123,9 @@ export function PWAInstallPrompt() {
 
               {/* Content */}
               <div className="relative flex items-start gap-4">
-                {/* App Icon */}
                 <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-brand-gradient shadow-lg shadow-brand-500/30">
                   <Download className="h-6 w-6 text-white" strokeWidth={2.5} />
                 </div>
-
                 <div className="min-w-0 flex-1">
                   <p className="text-[10px] font-bold uppercase tracking-[0.15em] text-brand-500">
                     {t('badge')}

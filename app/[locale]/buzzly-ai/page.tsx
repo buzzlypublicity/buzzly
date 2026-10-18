@@ -1,23 +1,20 @@
 import { setRequestLocale, getTranslations } from 'next-intl/server';
+import type { Metadata } from 'next';
 import { ChatUI } from '@/components/chat/chat-ui';
 import { Sparkles, ArrowLeft, Home } from 'lucide-react';
 import { Link } from '@/i18n/navigation';
 
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
-}) {
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'Chat' });
-  return { title: t('title') };
+  return { 
+    title: t('title'),
+    description: 'Chat with BUZZLY AI to learn more about our services, pricing, and how we can help your brand grow.',
+    robots: { index: false, follow: false } // 👈 SEO best practice: Don't index AI chat pages
+  };
 }
 
-export default async function BuzzlyAIPage({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
-}) {
+export default async function BuzzlyAIPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations('Chat');
@@ -82,3 +79,7 @@ export default async function BuzzlyAIPage({
     </div>
   );
 }
+
+
+
+ 

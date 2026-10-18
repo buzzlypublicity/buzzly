@@ -1217,5 +1217,30 @@
   "execution": "The Execution",
   "results": "The Results",
   "resultsSub": "Measurable outcomes from our strategic approach."
+},
+"MetadataAbout": {
+  "title": "About Us",
+  "description": "Learn about BUZZLY's story, mission, vision, and the team behind Bahrain's fastest-growing creative agency."
+},
+"MetadataServices": {
+  "title": "Our Services",
+  "description": "Explore our in-house services: PR, Social Media Marketing, Branding, Content Creation, Influencer Marketing, and Web Development."
+},
+"MetadataWork": {
+  "title": "Our Work & Case Studies",
+  "description": "Take a look at our self-initiated creative concepts and recent client work across Bahrain and the GCC."
+},
+"MetadataContact": {
+  "title": "Contact Us",
+  "description": "Ready to make some noise? Get in touch with BUZZLY Publicity in Muharraq, Bahrain."
+},
+"MetadataPricing": {
+  "title": "Pricing & Packages",
+  "description": "Transparent, no-surprise pricing for social media marketing, web development, and branding. See our packages."
+},
+"NotFound": {
+  "title": "Page Not Found",
+  "subtitle": "Looks like this page got lost in the noise.",
+  "cta": "Back to Homepage"
 }
 }

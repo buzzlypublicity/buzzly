@@ -7,10 +7,10 @@ import { Process } from '@/components/home/process';
 import { Services } from '@/components/home/services';
 import { WhyChoose } from '@/components/home/why-choose';
 import { useTranslations } from 'next-intl';
-
-export default function HomePage() {
-  const t = useTranslations('Hero');
-
+import { setRequestLocale } from 'next-intl/server';
+export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   return (
     <>
     <Hero/>

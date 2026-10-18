@@ -1,27 +1,17 @@
 import { notFound } from 'next/navigation';
 import { setRequestLocale } from 'next-intl/server';
+import type { Metadata } from 'next';
 import { routing } from '@/i18n/routing';
-import {
-  ALL_CONCEPTS,
-  getConceptBySlug,
-  type Locale,
-} from '@/data/concepts';
+import { ALL_CONCEPTS, getConceptBySlug, type Locale } from '@/data/concepts';
 import { ConceptDetail } from '@/components/work/concept-detail';
 
 export function generateStaticParams() {
   return ALL_CONCEPTS.flatMap((concept) =>
-    routing.locales.map((locale) => ({
-      locale,
-      slug: concept.slug,
-    }))
+    routing.locales.map((locale) => ({ locale, slug: concept.slug }))
   );
 }
 
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ locale: string; slug: string }>;
-}) {
+export async function generateMetadata({ params }: { params: Promise<{ locale: string; slug: string }> }): Promise<Metadata> {
   const { locale, slug } = await params;
   const concept = getConceptBySlug(slug);
   if (!concept) return {};
@@ -30,25 +20,22 @@ export async function generateMetadata({
   return {
     title: t.hero.headline,
     description: t.hero.subheadline,
+    alternates: { canonical: `/${locale}/work/${slug}` },
+    openGraph: {
+      title: `${t.hero.headline} | BUZZLY`,
+      description: t.hero.subheadline,
+      url: `https://buzzlypublicity.com/${locale}/work/${slug}`,
+      images: ['/og-image.jpg'],
+    },
   };
 }
 
-export default async function ConceptPage({
-  params,
-}: {
-  params: Promise<{ locale: string; slug: string }>;
-}) {
+export default async function ConceptPage({ params }: { params: Promise<{ locale: string; slug: string }> }) {
   const { locale, slug } = await params;
   setRequestLocale(locale);
 
   const concept = getConceptBySlug(slug);
   if (!concept) notFound();
 
-  return (
-    <ConceptDetail
-      concept={concept}
-      content={concept.translations[locale as Locale]}
-      locale={locale as Locale}
-    />
-  );
+  return <ConceptDetail concept={concept} content={concept.translations[locale as Locale]} locale={locale as Locale} />;
 }

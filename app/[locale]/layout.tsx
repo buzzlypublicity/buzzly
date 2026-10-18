@@ -1,17 +1,19 @@
-import type { Metadata, Viewport } from 'next';
-import { Inter, Cairo, Space_Grotesk } from 'next/font/google';
-import { NextIntlClientProvider, hasLocale } from 'next-intl';
-import { getTranslations } from 'next-intl/server';
-import { notFound } from 'next/navigation';
-import { routing } from '@/i18n/routing';
-import { getServerTheme } from '@/lib/theme';
-import { ChatProvider } from '@/context/chat-context';
-import { ConditionalChrome } from '@/components/global/conditional-chrome';
-import '../globals.css';
+import type { Metadata, Viewport } from "next";
+import { Inter, Cairo, Space_Grotesk } from "next/font/google";
+import { NextIntlClientProvider, hasLocale } from "next-intl";
+import { getTranslations } from "next-intl/server";
+import { notFound } from "next/navigation";
+import Script from "next/script"; // 👈 Ye add kiya Google Analytics ke liye
+import { routing } from "@/i18n/routing";
+import { getServerTheme } from "@/lib/theme";
+import { ChatProvider } from "@/context/chat-context";
+import { ConditionalChrome } from "@/components/global/conditional-chrome";
+import { PWAProvider } from "@/components/pwa/pwa-provider";
+import "../globals.css";
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'swap' });
-const cairo = Cairo({ subsets: ['arabic', 'latin'], variable: '--font-cairo', display: 'swap' });
-const grotesk = Space_Grotesk({ subsets: ['latin'], variable: '--font-grotesk', display: 'swap' });
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
+const cairo = Cairo({ subsets: ["arabic", "latin"], variable: "--font-cairo", display: "swap" });
+const grotesk = Space_Grotesk({ subsets: ["latin"], variable: "--font-grotesk", display: "swap" });
 
 /* ============================================================
    STATIC PARAMS
@@ -29,43 +31,43 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: 'Metadata' });
+  const t = await getTranslations({ locale, namespace: "Metadata" });
 
   return {
-    metadataBase: new URL('https://buzzlypublicity.com'),
+    metadataBase: new URL("https://buzzlypublicity.com"),
     title: {
-      default: t('title'),
+      default: t("title"),
       template: `%s | BUZZLY Publicity`,
     },
-    description: t('description'),
+    description: t("description"),
     alternates: {
       canonical: `/${locale}`,
       languages: {
-        en: '/en',
-        ar: '/ar',
+        en: "/en",
+        ar: "/ar",
       },
     },
     openGraph: {
-      title: t('title'),
-      description: t('description'),
+      title: t("title"),
+      description: t("description"),
       url: `/${locale}`,
-      siteName: 'BUZZLY Publicity',
+      siteName: "BUZZLY Publicity",
       images: [
         {
-          url: '/og-image.jpg', // 1200x630 image public folder mein daalein
+          url: "/og-image.jpg",
           width: 1200,
           height: 630,
-          alt: 'BUZZLY Publicity - Creative Agency in Bahrain',
+          alt: "BUZZLY Publicity - Creative Agency in Bahrain",
         },
       ],
-      locale: locale === 'ar' ? 'ar_BH' : 'en_US',
-      type: 'website',
+      locale: locale === "ar" ? "ar_BH" : "en_US",
+      type: "website",
     },
     twitter: {
-      card: 'summary_large_image',
-      title: t('title'),
-      description: t('description'),
-      images: ['/og-image.jpg'],
+      card: "summary_large_image",
+      title: t("title"),
+      description: t("description"),
+      images: ["/og-image.jpg"],
     },
   };
 }
@@ -74,8 +76,8 @@ export async function generateMetadata({
    VIEWPORT & THEME COLOR
    ============================================================ */
 export const viewport: Viewport = {
-  themeColor: '#E97A00',
-  width: 'device-width',
+  themeColor: "#E97A00",
+  width: "device-width",
   initialScale: 1,
   maximumScale: 5,
 };
@@ -84,38 +86,37 @@ export const viewport: Viewport = {
    LOCAL BUSINESS SCHEMA (JSON-LD)
    ============================================================ */
 const localBusinessSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'ProfessionalService',
-  name: 'BUZZLY Publicity & Advertising W.L.L',
-  image: 'https://buzzlypublicity.com/og-image.jpg',
-  '@id': 'https://buzzlypublicity.com',
-  url: 'https://buzzlypublicity.com',
-  telephone: '+97366316733',
-  priceRange: 'BHD',
-  description:
-    'Bilingual creative publicity agency in Bahrain. PR, Social Media, Branding, Content, Influencer Marketing, Digital Ads.',
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: "BUZZLY Publicity & Advertising W.L.L",
+  image: "https://buzzlypublicity.com/og-image.jpg",
+  "@id": "https://buzzlypublicity.com",
+  url: "https://buzzlypublicity.com",
+  telephone: "+97366316733",
+  priceRange: "BHD",
+  description: "Bilingual creative publicity agency in Bahrain. PR, Social Media, Branding, Content, Influencer Marketing, Digital Ads.",
   address: {
-    '@type': 'PostalAddress',
-    streetAddress: 'Flat 13, Building 1435, Road 504, Block 205',
-    addressLocality: 'Muharraq',
-    addressRegion: 'Muharraq',
-    postalCode: '205',
-    addressCountry: 'BH',
+    "@type": "PostalAddress",
+    streetAddress: "Flat 13, Building 1435, Road 504, Block 205",
+    addressLocality: "Muharraq",
+    addressRegion: "Muharraq",
+    postalCode: "205",
+    addressCountry: "BH",
   },
   geo: {
-    '@type': 'GeoCoordinates',
+    "@type": "GeoCoordinates",
     latitude: 26.2572,
     longitude: 50.611,
   },
   openingHoursSpecification: {
-    '@type': 'OpeningHoursSpecification',
-    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-    opens: '09:00',
-    closes: '18:00',
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    opens: "09:00",
+    closes: "18:00",
   },
   sameAs: [
-    'https://www.instagram.com/buzzlypublicity',
-    'https://www.linkedin.com/company/buzzlypublicity',
+    "https://www.instagram.com/buzzlypublicity",
+    "https://www.linkedin.com/company/buzzlypublicity",
   ],
 };
 
@@ -132,9 +133,9 @@ export default async function LocaleLayout({
   const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) notFound();
 
-  const dir = locale === 'ar' ? 'rtl' : 'ltr';
+  const dir = locale === "ar" ? "rtl" : "ltr";
   const theme = await getServerTheme();
-  const htmlClass = theme === 'dark' ? 'dark' : '';
+  const htmlClass = theme === "dark" ? "dark" : "";
 
   return (
     <html
@@ -153,10 +154,19 @@ export default async function LocaleLayout({
         <meta name="format-detection" content="telephone=no" />
         <meta name="mobile-web-app-capable" content="yes" />
         
-        {/* JSON-LD Schema for SEO */}
+        {/* DNS Prefetch & Preconnect for Ultra-Fast Loading */}
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
+
+        {/* JSON-LD Schema for Local SEO */}
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(localBusinessSchema),
+          }}
         />
       </head>
       <body
@@ -165,8 +175,27 @@ export default async function LocaleLayout({
         <NextIntlClientProvider>
           <ChatProvider>
             <ConditionalChrome>{children}</ConditionalChrome>
+            <PWAProvider />
           </ChatProvider>
         </NextIntlClientProvider>
+
+        {/* ============================================================
+            GOOGLE ANALYTICS 4 (GA4) - Optimized with next/script
+           ============================================================ */}
+        <Script
+          strategy="afterInteractive"
+          src="https://www.googletagmanager.com/gtag/js?id=G-T313T2TKP1"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-T313T2TKP1', {
+              page_path: window.location.pathname,
+            });
+          `}
+        </Script>
       </body>
     </html>
   );

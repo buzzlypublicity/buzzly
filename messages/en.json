@@ -967,7 +967,7 @@
       },
       "q3": {
         "question": "What payment methods do you accept?",
-        "answer": "We accept bank transfers and major payment gateways. Invoices are issued in BHD, USD, or EUR."
+        "answer": "We accept bank transfers and major payment gateways. Invoices are issued in BHD, USD, or SAR."
       },
       "q4": {
         "question": "Are there any hidden fees?",

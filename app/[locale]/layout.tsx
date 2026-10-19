@@ -10,6 +10,7 @@ import { ChatProvider } from "@/context/chat-context";
 import { ConditionalChrome } from "@/components/global/conditional-chrome";
 import { PWAProvider } from "@/components/pwa/pwa-provider";
 import "../globals.css";
+import { SplashScreen } from "@/components/pwa/splash-screen";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
 const cairo = Cairo({ subsets: ["arabic", "latin"], variable: "--font-cairo", display: "swap" });
@@ -181,6 +182,7 @@ export default async function LocaleLayout({
       <body
         className={`${inter.variable} ${cairo.variable} ${grotesk.variable} font-sans antialiased`}
       >
+        <SplashScreen/>
         <NextIntlClientProvider>
           <ChatProvider>
             <ConditionalChrome>{children}</ConditionalChrome>

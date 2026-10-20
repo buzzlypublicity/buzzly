@@ -94,8 +94,8 @@ const nextConfig: NextConfig = {
     root: path.join(__dirname),
   },
   reactStrictMode: true,
-  images: {
-    remotePatterns: [{ protocol: 'https', hostname: '**' }],
+   images: {
+    formats: ['image/avif', 'image/webp'],
   },
 };
 

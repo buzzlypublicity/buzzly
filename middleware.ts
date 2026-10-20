@@ -4,8 +4,8 @@ import { routing } from './i18n/routing';
 export default createMiddleware(routing);
 
 export const config = {
-  // 👇 Ye pattern static files ko 100% exclude karta hai
+  // 👇 Ye wahi matcher hai jo next-intl ki official documentation mein recommend kiya gaya hai
   matcher: [
-    '/((?!api|_next/static|_next/image|_vercel|images|favicon\\.ico|favicon\\.png|.*\\..*).*)',
+    '/((?!api|_next/static|_next/image|assets|favicon.ico|sw.js|site.webmanifest|.*\\..*).*)',
   ],
 };

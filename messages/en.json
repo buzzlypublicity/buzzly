@@ -1244,18 +1244,21 @@
   "subtitle": "Looks like this page got lost in the noise.",
   "cta": "Back to Homepage"
 },
+"Offline": {
+  "offlineMessage": "You're offline — browsing cached pages",
+  "onlineMessage": "Back online!"
+},
 "PWAInstall": {
   "badge": "Install App",
   "title": "Get the BUZZLY App",
-  "subtitle": "Install our app for a faster, smoother experience.",
+  "subtitle": "Faster, offline-ready, one-tap access.",
   "benefit1": "Lightning-fast loading",
   "benefit2": "Works offline",
   "benefit3": "One-tap access from home screen",
   "install": "Install App",
-  "later": "Maybe Later"
-},
-"Offline": {
-  "offlineMessage": "You're offline — browsing cached pages",
-  "onlineMessage": "Back online!"
+  "installShort": "Install",
+  "later": "Maybe Later",
+  "iosInstructions": "To install: Tap the Share icon → 'Add to Home Screen'",
+  "browserInstructions": "Look for 'Install App' in your browser menu (⋮)"
 }
 }

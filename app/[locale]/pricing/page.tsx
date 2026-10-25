@@ -7,6 +7,7 @@ import { PricingPromise } from '@/components/pricing/pricing-promise';
 import { PricingAddons } from '@/components/pricing/pricing-addons';
 import { PricingComparison } from '@/components/pricing/pricing-comparison';
 import { PricingFinalCTA } from '@/components/pricing/pricing-final-cta';
+import { PricingNotice } from '@/components/pricing/pricing-notice';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -35,8 +36,10 @@ export default async function PricingPage({ params }: { params: Promise<{ locale
         <PricingTabs />
         <PricingCards />
       </div>
+      <PricingNotice/>
       <PricingPromise />
       <PricingAddons/>
+
       <PricingComparison/>
       <PricingFinalCTA/>
     </>

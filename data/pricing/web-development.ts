@@ -1,3 +1,4 @@
+
 import type { PricingCategory } from './types';
 
 export const webDevPricing: PricingCategory = {
@@ -18,52 +19,141 @@ export const webDevPricing: PricingCategory = {
     {
       id: 'basic',
       name: { en: 'Basic Plan', ar: 'الخطة الأساسية' },
-      price: 'BD 49',
+      price: 'BD 89',
       features: [
-        { en: 'Ideal for Landing Pages & Single-Page Sites', ar: 'مثالي لصفحات الهبوط والمواقع ذات الصفحة الواحدة' },
-        { en: 'With Domain & Hosting (Provided by Client)', ar: 'مع النطاق والاستضافة (يقدمها العميل)' },
-        { en: 'Mobile & Tablet Fully Responsive', ar: 'متجاوب بالكامل مع الجوال والتابلت' },
-        { en: 'Contact Form Integration', ar: 'دمج نموذج الاتصال' },
-        { en: 'Social Media Links Integration', ar: 'دمج روابط وسائل التواصل' },
-        { en: 'Fast Loading Speed Performance', ar: 'أداء تحميل سريع' },
-        { en: 'Basic SEO Setup', ar: 'إعداد SEO أساسي' },
-        { en: 'Modern & Clean UI Layout', ar: 'تصميم واجهة حديث ونظيف' },
-        { en: '100% Launch Ready Solution', ar: 'حل جاهز للإطلاق 100%' },
+        {
+          en: '2 to 3 Professional Website Pages',
+          ar: 'من صفحتين إلى 3 صفحات احترافية للموقع',
+        },
+        {
+          en: 'Domain & Hosting (Provided by Client)',
+          ar: 'النطاق والاستضافة (يقدمهما العميل)',
+        },
+        {
+          en: 'Mobile & Tablet Fully Responsive',
+          ar: 'متجاوب بالكامل مع الجوال والتابلت',
+        },
+        {
+          en: 'Contact Form Integration',
+          ar: 'دمج نموذج الاتصال',
+        },
+        {
+          en: 'Social Media Links Integration',
+          ar: 'دمج روابط وسائل التواصل الاجتماعي',
+        },
+        {
+          en: 'Fast Loading Speed Performance',
+          ar: 'أداء سريع في تحميل الصفحات',
+        },
+        {
+          en: 'Professional SEO Setup',
+          ar: 'إعداد تحسين محركات البحث الاحترافي (SEO)',
+        },
+        {
+          en: 'Modern & Clean UI Layout',
+          ar: 'تصميم واجهة مستخدم حديثة ونظيفة',
+        },
+        {
+          en: '100% Launch-Ready Solution',
+          ar: 'حل جاهز للإطلاق بالكامل',
+        },
       ],
     },
     {
       id: 'standard',
       name: { en: 'Standard Plan', ar: 'الخطة القياسية' },
-      price: 'BD 99',
-      period: { en: '+ D/H', ar: '+ النطاق والاستضافة' }, // Domain & Hosting
+      price: 'BD 189',
+      period: { en: '+ D/H', ar: '+ النطاق والاستضافة' },
       isPopular: true,
       features: [
-        { en: '5 to 6 Pages Professional Website', ar: 'موقع احترافي من 5 إلى 6 صفحات' },
-        { en: 'Dynamic & Modern Design', ar: 'تصميم ديناميكي وحديث' },
-        { en: 'Content Management System (CMS)', ar: 'نظام إدارة المحتوى (CMS)' },
-        { en: 'WhatsApp Chat Integration', ar: 'دمج محادثة واتساب' },
-        { en: 'Speed & Performance Optimization', ar: 'تحسين السرعة والأداء' },
-        { en: 'SEO Friendly Architecture', ar: 'بنية صديقة لـ SEO' },
-        { en: 'Domain & Hosting Setup', ar: 'إعداد النطاق والاستضافة' },
-        { en: 'Advanced Security', ar: 'أمان متقدم' },
-        { en: 'Fully Ready to Launch', ar: 'جاهز تماماً للإطلاق' },
+        {
+          en: '5 to 6 Pages Professional Website',
+          ar: 'موقع احترافي يتكون من 5 إلى 6 صفحات',
+        },
+        {
+          en: 'Dynamic & Modern Design',
+          ar: 'تصميم ديناميكي وحديث',
+        },
+        {
+          en: 'Optional CMS Installation (Content Management System)',
+          ar: 'تثبيت اختياري لنظام إدارة المحتوى (CMS)',
+        },
+        {
+          en: 'Professional SEO Optimization',
+          ar: 'تحسين محركات البحث الاحترافي (SEO)',
+        },
+        {
+          en: 'Advanced Ai ChatBot Integrations',
+          ar: 'التكامل مع واجهات API وخدمات الطرف الثالث',
+        },
+        {
+          en: 'WhatsApp Chat Integration',
+          ar: 'دمج محادثة واتساب',
+        },
+        {
+          en: 'Speed & Performance Optimization',
+          ar: 'تحسين السرعة والأداء',
+        },
+        {
+          en: 'SEO-Friendly Website Architecture',
+          ar: 'بنية موقع متوافقة مع SEO',
+        },
+        {
+          en: 'Domain & Hosting Setup',
+          ar: 'إعداد النطاق والاستضافة',
+        },
+        {
+          en: 'Advanced Security',
+          ar: 'أمان متقدم',
+        },
+        {
+          en: 'Fully Ready to Launch',
+          ar: 'جاهز تماماً للإطلاق',
+        },
       ],
     },
     {
       id: 'business',
       name: { en: 'Business Plan', ar: 'خطة الأعمال' },
-      price: 'BD 189',
+      price: 'BD 389',
       period: { en: '+ D/H', ar: '+ النطاق والاستضافة' },
       features: [
-        { en: 'Complete E-Commerce / Corporate Site', ar: 'موقع تجارة إلكترونية / شركات كامل' },
-        { en: '8 to 10 Pages & Unlimited Product Uploads', ar: '8 إلى 10 صفحات وتحميل منتجات غير محدود' },
-        { en: 'Payment Gateway Integration', ar: 'دمج بوابة الدفع' },
-        { en: 'Advanced Security & SSL Setup', ar: 'أمان متقدم وإعداد SSL' },
-        { en: 'Premium Responsive Custom Design', ar: 'تصميم مخصص متجاوب متميز' },
-        { en: 'Full On-Page SEO Optimization', ar: 'تحسين SEO كامل داخل الصفحة' },
-        { en: 'WhatsApp Chat & Lead Capturing', ar: 'محادثة واتساب والتقاط العملاء المحتملين' },
-        { en: 'Domain & Hosting Setup', ar: 'إعداد النطاق والاستضافة' },
-        { en: 'Complete Turnkey Launch', ar: 'إطلاق متكامل جاهز' },
+        {
+          en: 'Complete E-Commerce / Corporate Website',
+          ar: 'موقع متكامل للتجارة الإلكترونية أو الشركات',
+        },
+        {
+          en: '8 to 10 Pages & Unlimited Product Uploads',
+          ar: 'من 8 إلى 10 صفحات مع إمكانية رفع منتجات غير محدودة',
+        },
+        {
+          en: 'Payment Gateway Integration',
+          ar: 'دمج بوابة الدفع الإلكتروني',
+        },
+        {
+          en: 'Advanced Security & SSL Setup',
+          ar: 'أمان متقدم وإعداد SSL',
+        },
+        {
+          en: 'Premium Responsive Custom Design',
+          ar: 'تصميم مخصص متميز ومتجاوب',
+        },
+        {
+          en: 'Professional SEO with Technical Analysis',
+          ar: 'تحسين محركات البحث الاحترافي مع التحليل التقني',
+        },
+        {
+          en: 'Advanced Ai ChatBot Integrations',
+          ar: 'التكامل مع واجهات API وخدمات الطرف الثالث المتقدمة',
+        },
+        {
+          en: 'WhatsApp Chat & Lead Capturing',
+          ar: 'محادثة واتساب وجمع بيانات العملاء المحتملين',
+        },
+        {
+          en: 'Domain & Hosting Setup',
+          ar: 'إعداد النطاق والاستضافة',
+        },
       ],
     },
   ],

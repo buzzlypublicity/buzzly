@@ -1122,7 +1122,8 @@
   "badge": "Packages",
   "mostPopular": "Most Popular",
   "getStarted": "Get Started",
-  "inquire": "Inquire Now"
+  "inquire": "Inquire Now",
+  "contactSales": "Contact Sales"
 },
 "PricingPromise": {
   "badge": "Our Promise",
@@ -1260,5 +1261,50 @@
   "later": "Maybe Later",
   "iosInstructions": "To install: Tap the Share icon → 'Add to Home Screen'",
   "browserInstructions": "Look for 'Install App' in your browser menu (⋮)"
+},
+"PricingNotice": {
+  "badge": "Important — Please Read",
+  "title": "What You'll Need to Provide",
+  "subtitle": "For the Standard and Business plans, some technical infrastructure is provided by you. This keeps your costs transparent and gives you full ownership.",
+  "clientProvides": "You provide",
+  "seeMore": "What is a database?",
+  "seeLess": "Hide explanation",
+  "footerNote": "Don't have domain, hosting, or database yet? We can help you set them up.",
+  "footerCta": "Ask on WhatsApp",
+  "plans": {
+    "standard": {
+      "badge": "Standard Plan",
+      "name": "CMS / Business Website",
+      "context": "Best for content-managed websites where you update pages, posts, or products yourself.",
+      "domain": "Your own domain name (e.g. yourbrand.com). You purchase and own it.",
+      "hosting": "Server space to host your website. Choose any provider (Hostinger, Vercel, AWS, etc.).",
+      "database": "Storage for your CMS content — pages, posts, images metadata, and admin users."
+    },
+    "business": {
+      "badge": "Business Plan",
+      "name": "E-Commerce Website",
+      "context": "Built for selling products online. Requires a database to store products, orders, customers, and payments.",
+      "domain": "Your own domain name (e.g. yourstore.com). You purchase and own it.",
+      "hosting": "Server space with enough resources for product images and traffic. You choose the provider.",
+      "database": "Secure storage for products, orders, customer accounts, and payment records."
+    }
+  },
+  "items": {
+    "domain": { "title": "Domain Name" },
+    "hosting": { "title": "Hosting" },
+    "database": { "title": "Database" }
+  },
+  "databaseExplanation": {
+    "intro": "A database is a secure system where your website's dynamic data is stored — like products, orders, users, and posts. Without it, a CMS or e-commerce site cannot function.",
+    "whatTitle": "What it stores?",
+    "what": "For a CMS: pages, blog posts, images metadata, and user accounts. For e-commerce: products, prices, stock, customer data, orders, and payment status.",
+    "providersTitle": "Popular providers you can use:",
+    "providers": {
+      "0": "MongoDB Atlas — free tier available, great for modern apps",
+      "1": "Supabase — Postgres database with generous free plan",
+      "2": "Firebase — Google's solution, ideal for real-time apps"
+    },
+    "note": "Not sure which one fits? Tell us your needs on WhatsApp — we'll recommend the best option for your project without any markup."
+  }
 }
 }

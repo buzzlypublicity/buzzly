@@ -4,13 +4,14 @@ import { Inter, Cairo, Space_Grotesk } from "next/font/google";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
+import Script from "next/script"; // 👈 ZAROORI - Add karein
 import { routing } from "@/i18n/routing";
 import { getServerTheme } from "@/lib/theme";
 import { ChatProvider } from "@/context/chat-context";
 import { ConditionalChrome } from "@/components/global/conditional-chrome";
 import { PWAProvider } from "@/components/pwa/pwa-provider";
-import "../globals.css";
 import { SplashScreen } from "@/components/pwa/splash-screen";
+import "../globals.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
 const cairo = Cairo({ subsets: ["arabic", "latin"], variable: "--font-cairo", display: "swap" });
@@ -129,8 +130,6 @@ export default async function LocaleLayout({
       data-scroll-behavior="smooth"
     >
       <head>
-        {/* ⚠️ PWA manifest link NAHI lagayenge — Next.js auto-inject karega */}
-
         {/* Apple PWA Meta */}
         <link rel="apple-touch-icon" href="/icons/icon-192x192.png" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -146,14 +145,27 @@ export default async function LocaleLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
 
-        {/* 🔥 GLOBAL PWA EVENT CAPTURE — Ye sabse zaroori hai! */}
+        {/* JSON-LD Schema (Script tag is fine — non-executable) */}
         <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(localBusinessSchema),
+          }}
+        />
+      </head>
+      <body
+        className={`${inter.variable} ${cairo.variable} ${grotesk.variable} font-sans antialiased`}
+      >
+        {/* 🔥 GLOBAL PWA EVENT CAPTURE — React 19 compatible */}
+        <Script
+          id="pwa-event-capture"
+          strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
               (function() {
                 window.deferredPrompt = null;
                 
-                // Capture beforeinstallprompt GLOBALLY (before React hydrates)
+                // Capture beforeinstallprompt GLOBALLY
                 window.addEventListener('beforeinstallprompt', function(e) {
                   e.preventDefault();
                   window.deferredPrompt = e;
@@ -171,18 +183,7 @@ export default async function LocaleLayout({
           }}
         />
 
-        {/* JSON-LD Schema */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(localBusinessSchema),
-          }}
-        />
-      </head>
-      <body
-        className={`${inter.variable} ${cairo.variable} ${grotesk.variable} font-sans antialiased`}
-      >
-        <SplashScreen/>
+        <SplashScreen />
         <NextIntlClientProvider>
           <ChatProvider>
             <ConditionalChrome>{children}</ConditionalChrome>
@@ -190,7 +191,6 @@ export default async function LocaleLayout({
           </ChatProvider>
         </NextIntlClientProvider>
 
-        {/* ✅ Single GA4 setup — only via GoogleAnalytics component */}
         <GoogleAnalytics gaId="G-T313T2TKP1" />
       </body>
     </html>
